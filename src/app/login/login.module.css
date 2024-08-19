@@ -1,0 +1,57 @@
+.container{
+    padding: 3rem;
+    color: var(--colorFuente);
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+
+.header h1{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.header h2{
+    font-size: 1.3rem;
+}
+
+.inputs{
+    padding: 2rem 0;
+    display: grid;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.inputs input{
+    border: black solid 1.5px;
+    border-radius: 5px;
+    display: block;
+    width: 18rem;
+    height: 2.5rem;
+    padding-left: 1rem;
+}
+
+.botones button{
+    background-color: var(--colorBotones);
+    color: white;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 50px;
+    border: black solid 2px;
+    width: 10rem;
+}
+
+.botones2{
+    padding-top: 1rem;
+    
+}
+
+.botones2 button{
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 50px;
+    width: 20rem;
+    border: var(--colorBotones) solid 2px;
+}
+
+
