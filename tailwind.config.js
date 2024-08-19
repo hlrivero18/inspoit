@@ -14,9 +14,12 @@ module.exports = {
       },
       colors: {
         'botonNaranja' : '#FF7D27',
-        'botonVerde' : '#8BC34A'
+        'botonVerde' : '#8BC34A',
+        'botonAzul' : '#1B6872'
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-animated')
+  ],
 };
