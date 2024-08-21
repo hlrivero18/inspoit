@@ -9,6 +9,8 @@ import { useState } from "react";
 
 const lato = Lato({ subsets: ["latin"], weight: ["700"] })
 
+// ! este nav es de uso general, solo para usuarios que no estan logueados
+
 export default function Navbar() {
     const [menu, setMenu] = useState(false)
 
@@ -43,20 +45,27 @@ export default function Navbar() {
                         <MdSearch />
                     </div>
                 </section>
+
+                {/* ! version mobile */}
+
                 <section className={`${style.nav__menu}`} onClick={handleMenu}>
                     <MdOutlineMenuOpen />
                 </section>
             </nav>
-                <section className={` ${style.menu__expand} ${menu ? style.show : style.hide}`}>
-                    <ul>
-                        <li>RED</li>
-                        <li>CONTACTO</li>
-                        <li>NOSOTROS</li>
-                        <li>FQAs</li>
+            <section className={` ${style.menu__expand} ${menu ? style.show : style.hide}`}>
+                <ul>
+                    <li>RED</li>
+                    <li>CONTACTO</li>
+                    <li>NOSOTROS</li>
+                    <li>FQAs</li>
+                    <Link href={'/login'} onClick={handleMenu}>
                         <li>INGRESAR</li>
+                    </Link>
+                    <Link href={'/register'} onClick={handleMenu}>
                         <li>CREAR CUENTA</li>
-                    </ul>
-                </section>
+                    </Link>
+                </ul>
+            </section>
 
         </div>
 
