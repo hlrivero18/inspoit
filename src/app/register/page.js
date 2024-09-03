@@ -1,6 +1,7 @@
 import style from './register.module.css'
 import ong from '@/images/ong.png'
 import vol from '@/images/vol.png'
+import Link from 'next/link'
 
 export default function Register() {
     return (
@@ -28,6 +29,10 @@ export default function Register() {
                     <p>Mi organizacion esta buscando voluntarios</p>
                 </div>
             </div>
+            <Link href={'/login'}>
+                <p className={`${style.login} p-2 border-b border-black font-bold`}>¿ya tienes cuenta? ingresa aqui</p>
+            </Link>
+
         </section>
     )
 }
