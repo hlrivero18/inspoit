@@ -29,7 +29,9 @@ export default function Navbar() {
                 <ul>
                     <li>RED</li>
                     <li>CONTACTO</li>
-                    <li>NOSOTROS</li>
+                    <Link href={"/about"}>
+                        <li>NOSOTROS</li>
+                    </Link>
                     <li>FQAs</li>
                 </ul>
                 <section className={`${style.nav__sectionButton}`}>
@@ -56,7 +58,9 @@ export default function Navbar() {
                 <ul>
                     <li>RED</li>
                     <li>CONTACTO</li>
-                    <li>NOSOTROS</li>
+                    <Link href={"/about"} onClick={handleMenu}>
+                        <li>NOSOTROS</li>
+                    </Link>
                     <li>FQAs</li>
                     <Link href={'/login'} onClick={handleMenu}>
                         <li>INGRESAR</li>
