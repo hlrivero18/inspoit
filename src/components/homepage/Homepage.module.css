@@ -1,0 +1,10 @@
+.home {
+  background-color: #f4f4f4;
+}
+.home hr {
+  width: 98%;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 3px;
+  border-top: 1px solid #1b4956;
+}

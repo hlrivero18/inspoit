@@ -1,0 +1,153 @@
+/* ========== Redes Sociales ========== */
+.redes {
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 40px 0;
+}
+
+.redes img {
+  width: 60px;
+  height: auto;
+}
+
+/* Responsive Design for Redes Sociales */
+@media (max-width: 900px) {
+  .redes img {
+    width: 30px;
+  }
+}
+
+/* ========== Footer General ========== */
+.footer {
+  background-color: #bac0b9;
+  color: #1b4956;
+  padding: 0 1rem;
+}
+
+.footer p {
+  margin-top: 12px;
+  height: 8vh;
+  font-size: 16px;
+  color: rgba(27, 73, 86, 0.63);
+}
+
+/* Footer HR Line */
+.footerCont hr {
+  width: 98%;
+  margin: auto;
+  margin-top: 10px;
+  border: 0;
+  border-top: 1px solid #1b4956;
+}
+
+/* Footer Layout */
+.footer2 {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 1rem;
+  height: auto;
+}
+
+/* ========== Footer Secciones ========== */
+.section {
+  flex: 1;
+  min-width: 0;
+  padding: 1rem;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+/* Contact Section */
+.contactSection {
+  text-align: center;
+}
+
+/* Newsletter Section */
+.newsletterTitle {
+  font-weight: bold;
+  text-align: left;
+}
+
+.iconwhatsapp {
+  text-align: right;
+  font-size: 3em;
+}
+
+@media (min-width: 900px) {
+  .iconwhatsapp {
+    font-size: 4em;
+  }
+}
+
+/* ========== Newsletter Form ========== */
+.newsletterForm {
+  display: flex;
+  align-items: center;
+  border: 2px solid rgba(27, 73, 86, 0.54);
+  border-radius: 50px;
+  padding: 1% 4%;
+  background-color: #fff;
+  margin: 20px 0;
+}
+
+.newsletterInput {
+  flex: 1;
+  border-radius: 50px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.newsletterButton {
+  padding: 0 1rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.newsletterButton i {
+  font-size: 0.7em;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .newsletterForm {
+    flex-direction: row;
+    gap: 0;
+    padding: 1% 5%;
+  }
+
+  .newsletterInput {
+    width: 100%;
+  }
+
+  .newsletterButton {
+    padding: 0.5rem;
+  }
+}
+
+/* ========== Media Queries ========== */
+@media (max-width: 500px) {
+  .sectionTitle,
+  .newsletterTitle {
+    font-size: 0.7em;
+  }
+
+  .categoryItem,
+  .contactItem {
+    font-size: 10px;
+  }
+
+  .footer p {
+    font-size: 10px;
+  }
+}
