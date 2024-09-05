@@ -32,7 +32,9 @@ export default function Navbar() {
                     <Link href={"/about"}>
                         <li>NOSOTROS</li>
                     </Link>
-                    <li>FQAs</li>
+                    <Link href={"/FQAs"}>
+                        <li>FQAs</li>
+                    </Link>
                 </ul>
                 <section className={`${style.nav__sectionButton}`}>
                     <Link href={'/register'}>

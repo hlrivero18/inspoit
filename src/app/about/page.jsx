@@ -29,60 +29,6 @@ export default function AboutUs() {
             />
           )
          })}
-
-
-          {/* <ProfileCard fullName={"Pepito Perez"} description={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, obcaecati aperiam error velit accusamus, consectetur cupiditate sapiente magnam, eum consequuntur officia voluptatibus! Tenetur nulla quisquam amet asperiores. Aliquid sapiente alias praesentium rerum. Porro, quis facilis? Amet, dignissimos totam? Ipsam quis ea iste cupiditate tempora architecto ipsum ut, consequatur labore odit."} imageUrl={"https://placehold.co/400x400"} social={{
-            Facebook: 'https://www.facebook.com/',
-            Twitter: 'https://www.twitter.com/',
-            Instagram: 'https://www.instagram.com/',
-            LinkedIn: 'https://www.linkedin.com/',
-            YouTube: 'https://www.youtube.com/',
-            TikTok: 'https://www.tiktok.com/',
-          }} />
-          <ProfileCard fullName={"Pepito Perez"} description={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, obcaecati aperiam error velit accusamus, consectetur cupiditate sapiente magnam, eum consequuntur officia voluptatibus! Tenetur nulla quisquam amet asperiores. Aliquid sapiente alias praesentium rerum. Porro, quis facilis? Amet, dignissimos totam? Ipsam quis ea iste cupiditate tempora architecto ipsum ut, consequatur labore odit."} imageUrl={"https://placehold.co/400x400"} social={{
-            Facebook: 'https://www.facebook.com/',
-            Twitter: 'https://www.twitter.com/',
-            Instagram: 'https://www.instagram.com/',
-            LinkedIn: 'https://www.linkedin.com/',
-            YouTube: 'https://www.youtube.com/',
-            TikTok: 'https://www.tiktok.com/',
-          }} isReversed />
-          <ProfileCard fullName={"Pepito Perez"} description={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, obcaecati aperiam error velit accusamus, consectetur cupiditate sapiente magnam, eum consequuntur officia voluptatibus! Tenetur nulla quisquam amet asperiores. Aliquid sapiente alias praesentium rerum. Porro, quis facilis? Amet, dignissimos totam? Ipsam quis ea iste cupiditate tempora architecto ipsum ut, consequatur labore odit."} imageUrl={"https://placehold.co/400x400"} social={{
-            Facebook: 'https://www.facebook.com/',
-            Twitter: 'https://www.twitter.com/',
-            Instagram: 'https://www.instagram.com/',
-            LinkedIn: 'https://www.linkedin.com/',
-            YouTube: 'https://www.youtube.com/',
-            TikTok: 'https://www.tiktok.com/',
-          }} />
-          <ProfileCard fullName={"Pepito Perez"} description={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, obcaecati aperiam error velit accusamus, consectetur cupiditate sapiente magnam, eum consequuntur officia voluptatibus! Tenetur nulla quisquam amet asperiores. Aliquid sapiente alias praesentium rerum. Porro, quis facilis? Amet, dignissimos totam? Ipsam quis ea iste cupiditate tempora architecto ipsum ut, consequatur labore odit."} imageUrl={"https://placehold.co/400x400"} social={{
-            Facebook: 'https://www.facebook.com/',
-            Twitter: 'https://www.twitter.com/',
-            Instagram: 'https://www.instagram.com/',
-            LinkedIn: 'https://www.linkedin.com/',
-            YouTube: 'https://www.youtube.com/',
-            TikTok: 'https://www.tiktok.com/',
-          }} isReversed />
-          <ProfileCard fullName={"Pepito Perez"} description={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, obcaecati aperiam error velit accusamus, consectetur cupiditate sapiente magnam, eum consequuntur officia voluptatibus! Tenetur nulla quisquam amet asperiores. Aliquid sapiente alias praesentium rerum. Porro, quis facilis? Amet, dignissimos totam? Ipsam quis ea iste cupiditate tempora architecto ipsum ut, consequatur labore odit."} imageUrl={"https://placehold.co/400x400"} social={{
-            Facebook: 'https://www.facebook.com/',
-            Twitter: 'https://www.twitter.com/',
-            Instagram: 'https://www.instagram.com/',
-            LinkedIn: 'https://www.linkedin.com/',
-            YouTube: 'https://www.youtube.com/',
-            TikTok: 'https://www.tiktok.com/',
-          }} /> */}
-        </section>
-
-        <section className="py-16 text-[#1B4956] flex justify-center gap-10 border-t-4 border-t-white">
-          <a href="https://www.instagram.com/">
-            <FaInstagram className="text-6xl"/>
-          </a>
-          <a href="https://www.linkedin.com/">
-            <FaLinkedinIn className="text-6xl"/>
-          </a>
-          <a href="https://www.facebook.com/">
-            <FaFacebookSquare className="text-6xl"/>
-          </a>
         </section>
       </div>
     </>
