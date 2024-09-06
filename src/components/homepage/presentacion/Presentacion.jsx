@@ -1,5 +1,5 @@
 import style from "./Presentacion.module.css";
-import presentacionImagen from "@/images/homePage/presentacionImagen.png"
+import presentacionImagen from "@/images/images/homePage/presentacionImagen.png"
 
 export default function presentacion() {
   return (

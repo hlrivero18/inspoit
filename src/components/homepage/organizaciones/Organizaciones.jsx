@@ -1,6 +1,6 @@
 import style from "./Organizaciones.module.css";
 
-import orgImagen from "@/images/homePage/orgImagen.png";
+import orgImagen from "@/images/images/homePage/orgImagen.png";
 
 export default function Organizaciones() {
   return (

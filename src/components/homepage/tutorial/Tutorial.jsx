@@ -1,5 +1,5 @@
 import style from "./Tutorial.module.css";
-import tutoImagen from "@/images/homePage/tutoImagen.png";
+import tutoImagen from "@/images/images/homePage/tutoImagen.png";
 
 export default function Tutorial() {
   return (
