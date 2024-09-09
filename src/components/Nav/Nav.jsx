@@ -63,7 +63,9 @@ export default function Navbar() {
                     <Link href={"/about"} onClick={handleMenu}>
                         <li>NOSOTROS</li>
                     </Link>
-                    <li>FQAs</li>
+                    <Link href={'/FQAs'} onClick={handleMenu}>
+                        <li>FQAs</li>
+                    </Link>
                     <Link href={'/login'} onClick={handleMenu}>
                         <li>INGRESAR</li>
                     </Link>
@@ -72,6 +74,9 @@ export default function Navbar() {
                     </Link>
                 </ul>
             </section>
+            <nav className={style.relleno}>
+                {/* espacio en blanco */}
+            </nav>
 
         </div>
 
