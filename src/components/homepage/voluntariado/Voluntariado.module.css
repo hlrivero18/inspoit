@@ -6,6 +6,8 @@
   height: 100vh;
   margin: 0;
   padding: 0;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .container2 {
@@ -16,6 +18,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  max-width: 100%;
 }
 
 /* ========== TItulos ========== */
@@ -25,6 +28,7 @@
   color: #1b4956;
   text-align: left;
   font-size: 2.5em;
+  max-width: 90%;
 }
 
 /* ========== Estilo de Imágenes en Círculo ========== */
@@ -40,11 +44,13 @@
 }
 
 .circle {
+  max-width: 200px;
   box-sizing: border-box;
   padding: 2%;
   transform: scale(0.8);
   margin: 0;
   min-width: 100px;
+  overflow: hidden;
 }
 
 .circle img {
@@ -70,6 +76,13 @@
     gap: 6px;
     padding: 0 3px;
   }
+  .circle {
+    transform: scale(0.7);
+    max-width: 200px;
+  }
+  .containerimg {
+    gap: 4px;
+  }
 }
 
 @media (max-width: 800px) {
@@ -78,6 +91,7 @@
   }
   .circle {
     transform: scale(0.7);
+    max-width: 120px;
   }
   .containerimg {
     gap: 4px;
@@ -87,10 +101,11 @@
 @media (max-width: 500px) {
   .h1 {
     font-size: 1.2em;
+    text-align: center;
   }
   .circle {
     transform: scale(0.6);
-    min-width: 80px;
+    max-width: 100px;
   }
   .circle p {
     font-size: 1em;
@@ -102,8 +117,7 @@
 
 @media (max-width: 370px) {
   .circle {
-    min-width: 80px;
-    max-width: 100px;
+    max-width: 90px;
     margin: 5px;
     flex: 1 1 30%;
   }
