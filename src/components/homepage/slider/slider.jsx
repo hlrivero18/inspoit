@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react'
 
 export default function Slider(){
     const sliders = [slider1.src, slider2.src, slider3.src]
+    const esLogan = ["Descubre nuevos desafios y proyectos desde donde estés.", "La nueva red que conecta voluntarios IT con Ongs", "Registrate y revoluciona el talento tecnologico"]
 
     const [imgCurrent, setImgCurrent] = useState(0)
 
@@ -30,7 +31,7 @@ export default function Slider(){
         <section className={`${style.container}`}>
             <div className={`${style.image_container}`}>
                 <img src={sliders[imgCurrent]} className=' h-full m-auto' alt="imagen de organizacion" />
-                <h1 className={style.textoverlay}>Descubre nuevos desafios y proyectos desde donde estés</h1>
+                <h1 className={style.textoverlay}>{esLogan[imgCurrent]}</h1>
             </div>
             
         </section>

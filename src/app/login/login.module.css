@@ -41,6 +41,8 @@
     width: 10rem;
 }
 
+
+
 .botones2{
     padding-top: 1rem;
     
@@ -78,4 +80,8 @@
     border: var(--colorBotones) solid 2px;
 }
 
+.botones button:hover, .botones2 button:hover{
+    background-color: white;
+    color: var(--colorBotones);
+}
 
