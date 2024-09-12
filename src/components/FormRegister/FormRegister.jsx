@@ -1,29 +1,57 @@
 'use client'
-export function FormRegisterOng(){
-    return(
-        <div>
-            <div>
-                <form action="">
-                    <div>
-                        <label>Nombre de la organizacion</label>
-                        <input type="text"  placeholder="escribe el nombre de tu organizacion"/>
+import { useState } from 'react'
+import style from './formregister.module.css'
+import imageProfile from '@/images/form/imageprofile.png'
+import { Montserrat } from "next/font/google";
+const montserrat = Montserrat({ subsets: ["latin"], weight: ["400"] });
 
-                        <label>Fecha de creacion</label>
-                        <input type="date"/>
+export function FormRegister({ typeRegister, setFormOn }) {
+    const handleClose = ()=>{
+        setFormOn(false)
+    }
+    return (
+        <div className={`${style.fullScreen} ${montserrat.className}`} onClick={handleClose}>
+            <div className={style.window} onClick={(event) => event.stopPropagation()}>
+                {typeRegister === 'ong' ? <h1 className={style.title}>Registre su organización</h1> :
+                    <h1 className={style.title}>Registrese como Voluntario</h1>}
+                {typeRegister === 'ong' ?
+                    <form action="" className={style.form}>
+                        <div className={style.form_div}>
 
-                        <label>Persona responsable</label>
-                        <input type="text" />
+                            <label>Nombre</label>
+                            <input type="text" placeholder="escribe el nombre de tu organizacion..." />
 
-                        <label>Descripcion</label>
-                        <input type="text" placeholder="pequeña descripcion..."/>  
-                        
-                        <label>Email</label>
-                        <input type="text" />
+                            <label>Persona responsable</label>
+                            <input type="text" placeholder="persona a cargo de tu organizacion..." />
 
-                        <label>Contraseña</label>
-                        <input type="text" />
-                    </div>
-                </form>
+                            <label>Email</label>
+                            <input type="text" placeholder="email de la organizacion" />
+
+                            <label>Contraseña</label>
+                            <input type="password" placeholder="brindanos una contraseña" />
+                        </div>
+                        <div className={`${style.input_img} m-auto`}>
+                            <img className='w-full h-full m-auto' src={imageProfile.src} alt="agrega una imagen" />
+                        </div>
+                        <button>Registrese</button>
+                    </form>
+                    :
+                    <form action="" className={style.form}>
+                        <div className={style.form_div}>
+                            <label>Nombre</label>
+                            <input type="text" placeholder="escribe tu nombre..." />
+
+                            <label>Email</label>
+                            <input type="text" placeholder="escribe tu email valido" />
+
+                            <label>Contraseña</label>
+                            <input type="text" placeholder="brindanos una contraseña" />
+                        </div>
+                        <div className={`${style.input_img} m-auto`}>
+                            <img className='w-full h-full m-auto' src={imageProfile.src} alt="agrega una imagen" />
+                        </div>
+                        <button>Regitrese</button>
+                    </form>}
             </div>
         </div>
     )

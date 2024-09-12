@@ -1,0 +1,80 @@
+.fullScreen {
+    width: 100%;
+    height: 100vh;
+    z-index: 60;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.538);
+    display: grid;
+    place-items: center
+}
+
+.window {
+    z-index: 70;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    width: 60%;
+    background-color: var(--colorClaro);
+    box-shadow: 1px 10px 38px -7px rgba(0, 0, 0, 0.39);
+    -webkit-box-shadow: 1px 10px 38px -7px rgba(0, 0, 0, 0.39);
+    -moz-box-shadow: 1px 10px 38px -7px rgba(0, 0, 0, 0.39);
+    animation: jumpIn 1s ease-out forwards;
+}
+
+.title{
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 3fr 1fr;
+}
+
+.form_div{
+    padding-right: 1rem;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    display: grid;
+}
+
+.form_div label{
+    text-align: start;
+    margin-top: 1rem;
+}
+
+.form_div input{
+    border: black solid 1px;
+    border-radius: 5px;
+    display: block;
+    height: 2rem;
+    padding-left: 1rem;
+    font-size: 13px;
+}
+
+.input_img{
+    width: 12rem;
+    height: 12rem;
+}
+
+.form button{
+    grid-column: 1 /span 2;
+    background-color: var(--colorBotones);
+    color: white;
+    
+    padding: 0.5rem;
+    border-radius: 50px;
+    border: black solid 2px;
+    height: 3rem;
+    width: 10rem;
+    margin: auto;
+    margin-top: 3rem;
+}
+
+.form button:hover{
+    background-color: white;
+    color: var(--colorBotones);
+}
