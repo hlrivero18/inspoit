@@ -1,0 +1,161 @@
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 280px;
+  height: 303px;
+  text-align: center;
+  position: relative;
+}
+.fecha {
+  position: absolute;
+  bottom: 161px;
+  right: 10px;
+  font-size: 12px;
+  color: grey;
+}
+
+.cardInfo {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 2px solid white;
+}
+.title {
+  text-align: center;
+  font-weight: bolder;
+
+  font-size: 1.5rem;
+  color: #1c6671;
+  line-height: 1.2;
+  height: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bolder;
+  margin-top: 3px;
+  margin-bottom: 2px;
+
+  color: #1c6671;
+}
+
+.description {
+  border: 2px solid rgb(255, 255, 255);
+  margin-top: -4px;
+
+  font-weight: thin;
+  font-size: 12px;
+  color: #666;
+}
+.projectImage {
+  width: 280px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.button {
+  border: 2px solid #81b2ad;
+  color: #1c6671;
+  padding: 5px 40px;
+  font-size: 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.button:hover {
+  background-color: #bdd7e3;
+}
+
+@media (max-width: 768px) {
+  .cardContainer {
+    width: 200px;
+    height: 230px;
+  }
+
+  .projectImage {
+    width: 200px;
+    height: 90px;
+  }
+
+  .title {
+    margin-top: -1px;
+    height: 50px;
+    font-size: 1.1rem;
+  }
+  .description {
+    margin-top: -10px;
+    font-size: 11px;
+  }
+
+  .button {
+    padding: 2px 20px;
+    font-size: 11px;
+    position: relative;
+    bottom: 4px;
+  }
+
+  .avatar {
+    width: 30px;
+    height: 30px;
+  }
+  .fecha {
+    position: absolute;
+    bottom: 124px;
+    right: 10px;
+    font-size: 10px;
+    color: grey;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardContainer {
+    width: 160px;
+    height: 200px;
+  }
+
+  .projectImage {
+    width: 160px;
+    height: 80px;
+  }
+
+  .title {
+    margin-top: -1px;
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 8px;
+  }
+
+  .button {
+    padding: 2px 20px;
+    font-size: 11px;
+  }
+
+  .avatar {
+    width: 30px;
+    height: 30px;
+  }
+  .fecha {
+    position: absolute;
+    bottom: 110px;
+    right: 10px;
+    font-size: 7px;
+    color: grey;
+  }
+}

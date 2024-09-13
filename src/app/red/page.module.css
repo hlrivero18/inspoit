@@ -1,0 +1,42 @@
+.container {
+  padding: 15px;
+  background-color: var(--colorClaro);
+}
+.cardContainer {
+  gap: 25px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+.pagination button {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #333;
+}
+
+.pagination button:hover {
+  background-color: #ddd;
+}
+
+.pagination button.active {
+  background-color: #333;
+  color: white;
+}

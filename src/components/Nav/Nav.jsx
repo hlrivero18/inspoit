@@ -1,56 +1,58 @@
-'use client'
-import style from "./Nav.module.css"
+"use client";
+import style from "./Nav.module.css";
 import { MdSearch } from "react-icons/md";
 import { MdOutlineMenuOpen } from "react-icons/md";
 import { Lato } from "next/font/google";
-import logo from "@/images/logoI.png"
+import logo from "@/images/logoI.png";
 import Link from "next/link";
 import { useState } from "react";
 
-const lato = Lato({ subsets: ["latin"], weight: ["700"] })
+const lato = Lato({ subsets: ["latin"], weight: ["700"] });
 
 // ! este nav es de uso general, solo para usuarios que no estan logueados
 
 export default function Navbar() {
-    const [menu, setMenu] = useState(false)
+  const [menu, setMenu] = useState(false);
 
-    const handleMenu = () => {
-        setMenu(!menu)
-    }
+  const handleMenu = () => {
+    setMenu(!menu);
+  };
 
-    return (
-        <div className={`${style.container}`}>
-            <nav className={` ${style.nav}`}>
-                <section className={`${style.nav__logo}`}>
-                    <Link href="/" style={{ all: 'unset' }}>
-                        <img src={logo.src} alt="logo inspoit" />
-                    </Link>
-                </section>
-                <ul>
-                    <li>RED</li>
-                    <li>CONTACTO</li>
-                    <Link href={"/about"}>
-                        <li>NOSOTROS</li>
-                    </Link>
-                    <Link href={"/FQAs"}>
-                        <li>FQAs</li>
-                    </Link>
-                </ul>
-                <section className={`${style.nav__sectionButton}`}>
-                    <Link href={'/register'}>
-                        <button className="bg-botonNaranja">Crear Cuenta</button>
-                    </Link>
+  return (
+    <div className={`${style.container}`}>
+      <nav className={` ${style.nav}`}>
+        <section className={`${style.nav__logo}`}>
+          <Link href="/" style={{ all: "unset" }}>
+            <img src={logo.src} alt="logo inspoit" />
+          </Link>
+        </section>
+        <ul>
+          <Link href={"/red"}>
+            <li>RED</li>
+          </Link>
+          <li>CONTACTO</li>
+          <Link href={"/about"}>
+            <li>NOSOTROS</li>
+          </Link>
+          <Link href={"/FQAs"}>
+            <li>FQAs</li>
+          </Link>
+        </ul>
+        <section className={`${style.nav__sectionButton}`}>
+          <Link href={"/register"}>
+            <button className="bg-botonNaranja">Crear Cuenta</button>
+          </Link>
 
-                    <Link href={'/login'}>
-                        <button className="bg-botonVerde">Ingresar</button>
-                    </Link>
+          <Link href={"/login"}>
+            <button className="bg-botonVerde">Ingresar</button>
+          </Link>
 
-                    <div className="cursor-pointer">
-                        <MdSearch />
-                    </div>
-                </section>
+          <div className="cursor-pointer">
+            <MdSearch />
+          </div>
+        </section>
 
-                {/* ! version mobile */}
+        {/* ! version mobile */}
 
                 <section className={`${style.nav__menu}`} onClick={handleMenu}>
                     <MdOutlineMenuOpen />
@@ -72,7 +74,9 @@ export default function Navbar() {
                     </Link>
                 </ul>
             </section>
-
+            <nav className={style.relleno}>
+                {/* espacio en blanco */}
+            </nav>
         </div>
 
     )
