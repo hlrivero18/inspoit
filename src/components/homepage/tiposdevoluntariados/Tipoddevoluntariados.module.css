@@ -42,7 +42,7 @@
 .card h3 {
   font-family: "Open Sans", sans-serif;
   color: #ff7d27;
-  font-size: 1.25em;
+  font-size: 1.2rem;
   margin-bottom: 20px;
 }
 
@@ -50,7 +50,7 @@
 .card p {
   flex-grow: 1;
 
-  font-size: 1.25em;
+  font-size: 0.9rem;
   color: #666;
   line-height: 1.6;
   margin-top: 0;

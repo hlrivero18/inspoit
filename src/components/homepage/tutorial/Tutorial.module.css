@@ -1,55 +1,159 @@
-.Tutorial{
-    margin-top: 40px;
-    background-color: #fff;
-    width: 201vh;
-    height: 500px;
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+.contenedorTutorial{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  height: 80vh;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
 }
 
-.imagencontenedor{
-    margin-left: 35rem;
-    width: 462px;
-    height: 450px;
-    margin-top: 2rem;
+.contenedor{
+  background-color: aliceblue;
+  padding: 0.5rem;
+}
+.h1 {
+  font-family: "Lato", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1b4956;
+}
+.h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #1b4956;
 }
 
-.botonregistrate{
-    background-color: #8BC34A;
-    color: #fcfcfc;
-    width: 250px;
-    height: 50px;
-    border-radius: 50%;
-    padding: 7px;
-    margin-top: 20px;
-    border-radius: 30px;
-    cursor: pointer;
-    /* margin-left: 35rem;   */  
-    border: 1px solid #306139;
-
+.h3 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.7rem;
+  color: #1b6872;
+}
+.icono {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.botonesTutorial {
+  display: flex;
+  gap: 5px;
+  margin-top: 20px;
 }
 
-.botoninspirate{
-    background-color: #f7f4f2;
-    color: #306139;
-    width: 250px;
-    height: 50px;
-    border-radius: 50%;
-    margin-left: 20rem;
-    padding: 7px;
-    border-radius: 30px;
-    cursor: pointer;
-    margin-left: 1rem;  
-    margin-bottom: 10rem;
-    border: 1px solid #FF7D27;
-      
+.botonregistrate,
+.botoninspirate {
+  width: 80%;
+  max-width: 250px;
+  height: auto;
+  padding: 0.5rem;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
-.imagencontenedor{
 
-    width: 530px;
-    height: 450px;
+.botonregistrate {
+  background-color: #8bc34a;
+  color: #fcfcfc;
+  border-color: #613030;
 }
-.videocontenedor{
 
-    width: 500px;
-    margin-top: -388px;
-    margin-left: 15px;
+.botoninspirate {
+  background-color: #f7f4f2;
+  color: #306139;
+  border-color: #ff7d27;
 }
+@media (max-width: 768px){
+  .contenedorTutorial{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.8fr 1fr;
+  }
+}
+
+/* .Tutorial {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+
+.h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #1b4956;
+}
+
+.h3 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.75em;
+  color: #1b6872;
+}
+
+.contenedor {
+  width: 50%;
+}
+
+.icono {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.textoIcono {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.botonesTutorial {
+  display: flex;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.botonregistrate,
+.botoninspirate {
+  width: 80%;
+  max-width: 250px;
+  height: auto;
+  padding: 0.5rem;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.botonregistrate {
+  background-color: #8bc34a;
+  color: #fcfcfc;
+  border-color: #613030;
+}
+
+.botoninspirate {
+  background-color: #f7f4f2;
+  color: #306139;
+  border-color: #ff7d27;
+}
+
+.videocontenedor {
+ 
+  padding: 5px;
+}
+
+.videocontenedor iframe {
+  width: 100%;
+  height: 50vh;
+} */
