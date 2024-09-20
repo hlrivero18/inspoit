@@ -10,8 +10,10 @@ export default function Homepage() {
   return (
     <div className={style.home}>
       <Slider/>
-      <Tutorial/>
       <Organizaciones/>
+      <hr className={style.homeHr} /> <br />
+      <Tutorial/>
+      <hr className={style.homeHr} /> <br />
       <Voluntariado />
       <hr className={style.homeHr} /> <br />
       <Tipodevoluntariado />

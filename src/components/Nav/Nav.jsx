@@ -54,30 +54,32 @@ export default function Navbar() {
 
         {/* ! version mobile */}
 
-                <section className={`${style.nav__menu}`} onClick={handleMenu}>
-                    <MdOutlineMenuOpen />
-                </section>
-            </nav>
-            <section className={` ${style.menu__expand} ${menu ? style.show : style.hide}`}>
-                <ul>
-                    <li>RED</li>
-                    <li>CONTACTO</li>
-                    <Link href={"/about"} onClick={handleMenu}>
-                        <li>NOSOTROS</li>
-                    </Link>
-                    <li>FQAs</li>
-                    <Link href={'/login'} onClick={handleMenu}>
-                        <li>INGRESAR</li>
-                    </Link>
-                    <Link href={'/register'} onClick={handleMenu}>
-                        <li>CREAR CUENTA</li>
-                    </Link>
-                </ul>
-            </section>
-            <nav className={style.relleno}>
-                {/* espacio en blanco */}
-            </nav>
-        </div>
+        <section className={`${style.nav__menu}`} onClick={handleMenu}>
+          <MdOutlineMenuOpen />
+        </section>
+      </nav>
+      <section className={` ${style.menu__expand} ${menu ? style.show : style.hide}`}>
+        <ul>
+          <Link href={"/red"} onClick={handleMenu}>
+            <li>RED</li>
+          </Link>
+          <li>CONTACTO</li>
+          <Link href={"/about"} onClick={handleMenu}>
+            <li>NOSOTROS</li>
+          </Link>
+          <li>FQAs</li>
+          <Link href={'/login'} onClick={handleMenu}>
+            <li>INGRESAR</li>
+          </Link>
+          <Link href={'/register'} onClick={handleMenu}>
+            <li>CREAR CUENTA</li>
+          </Link>
+        </ul>
+      </section>
+      <nav className={style.relleno}>
+        {/* espacio en blanco */}
+      </nav>
+    </div>
 
-    )
+  )
 }
