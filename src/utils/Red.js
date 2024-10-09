@@ -210,7 +210,7 @@ const data = {
       idproyecto: 1,
       titulo: "Alfabetización Digital",
       descripcion:
-        "Programa para enseñar competencias digitales básicas a adultos mayores.",
+        "Programa para enseñar competencias digitales básicas a adultos mayores. El objetivo es reducir la brecha digital y mejorar la calidad de vida de los participantes.",
       requisitos: "Conocimiento básico de informática.",
       estado: "en proceso",
       fecha_inicio: "2024-01-15",
