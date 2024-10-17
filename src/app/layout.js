@@ -9,6 +9,7 @@ export const metadata = {
   description: "Conectando el crecimiento",
 };
 
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
