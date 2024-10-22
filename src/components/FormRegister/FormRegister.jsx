@@ -2,13 +2,14 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation';
 import style from './formregister.module.css'
-import imageProfile from '@/images/form/imageprofile.png'
 import { Montserrat } from "next/font/google";
 import validatorRegisterOng from '@/utils/validatorRegisterOng';
 import validatorRegisterVol from '@/utils/validatorRegisterVol';
 import axios from 'axios';
 import { POSTUSER } from '@/request/userRequest';
+import useStore from '@/store/useStore';
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400"] });
+
 
 
 export function FormRegister({ typeRegister, setFormOn }) {
@@ -17,19 +18,24 @@ export function FormRegister({ typeRegister, setFormOn }) {
         password: "",
         email: "",
         pResponsable: "",
-        repeatPass: ""
+        repeatPass: "",
+        profileImgae:"",
+        typeUser: typeRegister
     })
     const [error, setError] = useState({})
 
     const router = useRouter();
 
+    const {setAccess, setUser} = useStore()
+
     const handleChange = (e) => {
         const { value, name } = e.target
         let newForm = { ...form, [name]: value }
         setForm(newForm)
+        handleError(newForm)
     }
 
-    const handleError = () => {
+    const handleError = (form) => {
         typeRegister === 'ong' ? setError(validatorRegisterOng(form)) : setError(validatorRegisterVol(form))
     }
 
@@ -38,10 +44,11 @@ export function FormRegister({ typeRegister, setFormOn }) {
     }
 
     const handlePost = async () => {
-        handleError()
+        // handleError()
         if (Object.keys(error).length === 0) {
             try {
                 const response = await axios.post(POSTUSER, form)
+                console.log(response)
                 setForm({
                     name: "",
                     password: "",
@@ -50,6 +57,8 @@ export function FormRegister({ typeRegister, setFormOn }) {
                     repeatPass: ""
                 })
                 const id = response.data.data._id
+                setAccess(true)
+                setUser(id)
                 router.push('/profile/' + id);
 
             }
@@ -100,10 +109,9 @@ export function FormRegister({ typeRegister, setFormOn }) {
                                 placeholder="repite la contraseña" />
 
                         </div>
-                        <div className={`${style.input_img} m-auto`}>
-                            <img className='w-full h-full m-auto' src={imageProfile.src} alt="agrega una imagen" />
+                        <div className={style.button}>
+                            <button>Regitrese</button>
                         </div>
-                        <button>Registrese</button>
                     </form>
                     :
                     <form action="" className={style.form} onSubmit={handleClick}>
@@ -142,9 +150,6 @@ export function FormRegister({ typeRegister, setFormOn }) {
                             <div>
                                 <p>{error.repeatPass && error.repeatPass}</p>
                             </div>
-                        </div>
-                        <div className={`${style.input_img} m-auto`}>
-                            <img className='w-full h-full m-auto' src={imageProfile.src} alt="agrega una imagen" />
                         </div>
                         <div className={style.button}>
                             <button>Regitrese</button>
