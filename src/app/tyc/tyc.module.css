@@ -1,0 +1,57 @@
+.contenedor_titulo {
+    height: 30%;
+    padding: 2em;
+}
+
+.titulo {
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1B4956;
+    margin: auto;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    min-height: 80vh;
+}
+
+.terminos {
+    padding: 0.7em;
+    width: 50%;
+    justify-content: center;
+    border: 1px solid #979797;
+    border-radius: 1.5em;
+    margin: 0.5em;
+}
+
+.encabezado_card {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    color: #1B6872;
+    padding: 5px 0;
+}
+
+.terminos[open] .encabezado_card {
+    color: #FF7D27;
+}
+
+.contenido_card {
+    margin-top: 10px;
+    padding-left: 15px;
+    color: #555;
+    line-height: 1.6;
+}
+
+@media screen and (max-width:768px) {
+
+    .terminos {
+        width: 80%;
+    }
+}

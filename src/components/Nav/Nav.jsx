@@ -6,6 +6,8 @@ import { Lato } from "next/font/google";
 import logo from "@/images/logoI.png";
 import Link from "next/link";
 import { useState } from "react";
+import useStore from "@/store/useStore";
+import SearchBar from "../searchbar/searchbar";
 
 const lato = Lato({ subsets: ["latin"], weight: ["700"] });
 
@@ -13,6 +15,7 @@ const lato = Lato({ subsets: ["latin"], weight: ["700"] });
 
 export default function Navbar() {
   const [menu, setMenu] = useState(false);
+  const { access } = useStore()
 
   const handleMenu = () => {
     setMenu(!menu);
@@ -38,19 +41,23 @@ export default function Navbar() {
             <li>FQAs</li>
           </Link>
         </ul>
-        <section className={`${style.nav__sectionButton}`}>
-          <Link href={"/register"}>
-            <button className="bg-botonNaranja">Crear Cuenta</button>
-          </Link>
+        {access ?
+          <SearchBar />
+          :
+          <section className={`${style.nav__sectionButton}`}>
+            <Link href={"/register"}>
+              <button className="bg-botonNaranja">Crear Cuenta</button>
+            </Link>
 
-          <Link href={"/login"}>
-            <button className="bg-botonVerde">Ingresar</button>
-          </Link>
+            <Link href={"/login"}>
+              <button className="bg-botonVerde">Ingresar</button>
+            </Link>
 
-          <div className="cursor-pointer">
-            <MdSearch />
-          </div>
-        </section>
+            <div className="cursor-pointer">
+              <MdSearch />
+            </div>
+          </section>
+        }
 
         {/* ! version mobile */}
 

@@ -1,0 +1,6 @@
+import { request } from "./request"
+export const GETALLUSERS = request + "user/"
+export const GETUSERID = request + "user/"
+export const POSTUSER = request + "user"
+export const LOGINUSER = request + "login"
+export const UPDATEUSER = request + "user/"

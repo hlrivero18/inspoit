@@ -1,0 +1,74 @@
+.container{
+    background-color: var(--colorClaro);
+    color: var(--colorFuente);
+}
+
+.container h3{
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+.container p {
+    font-size: 13px;
+}
+
+.portada {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 15rem;
+    overflow: hidden;
+    box-shadow: 1px 10px 38px -7px rgba(0, 0, 0, 0.39);
+    -webkit-box-shadow: 1px 10px 38px -7px rgba(0, 0, 0, 0.39);
+    -moz-box-shadow: 1px 10px 38px -7px rgba(0, 0, 0, 0.39);
+}
+
+.portada img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.perfil {
+    width: 15rem;
+    height: 15rem;
+    margin-top: -120px;
+    margin-left: 4rem;
+    text-align: center;
+}
+
+.perfil img {
+    border: 4px solid var(--colorClaro);
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+}
+
+.perfil h1{
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.descripcion{
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 2.6fr;
+}
+
+.card{
+    margin-top: 80px;
+    background-color: white;
+    width: auto;
+    height: fit-content;
+    display: grid;
+    gap: 10px;
+}
+
+.cardG{
+    margin: 15px;
+    background-color: white;
+    width: auto;
+    border-radius: 20px;
+    box-shadow: 6px 7px 24px -2px rgba(0,0,0,0.38);
+    -webkit-box-shadow: 6px 7px 24px -2px rgba(0,0,0,0.38);
+    -moz-box-shadow: 6px 7px 24px -2px rgba(0,0,0,0.38);
+}
