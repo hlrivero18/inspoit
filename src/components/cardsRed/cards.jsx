@@ -1,5 +1,7 @@
 import style from "./cards.module.css";
+import Link from "next/link";
 export default function Cards({
+  idproyecto,
   titulo,
   descripcion,
   fechadeinicio,
@@ -24,9 +26,15 @@ export default function Cards({
         <h3 className={style.fecha}>{fechadeinicio}</h3>
         <div className={style.cardContent}>
           <h1 className={style.title}>{titulo}</h1>
-          <p className={style.description}>{descripcion}</p>
+          <p className={style.description}>
+            {descripcion.length > 70
+              ? `${descripcion.substring(0, 70)}...`
+              : descripcion}
+          </p>
         </div>
-        <button className={style.button}>Ver más</button>
+        <Link href={`/detail/${idproyecto}`}>
+          <button className={style.button}>Ver más</button>
+        </Link>
       </div>
     </div>
   );

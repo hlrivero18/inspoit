@@ -1,30 +1,3 @@
-// import data from "@/utils/Red";
-// import Cards from "@/components/cardsRed/cards";
-// import style from "./page.module.css";
-// export default function Redpages() {
-//   console.log("Proyectos:", data.proyecto); // Para verificar los datos
-
-//   // Obtener los primeros 6 proyectos
-//   const proyectos = data.proyecto.slice(0, 8);
-
-//   return (
-//     <div className={`${style.container}`}>
-//       <div className={style.cardContainer}>
-//         {proyectos.map((proyecto) => (
-//           <Cards
-//             key={proyecto.idproyecto}
-//             titulo={proyecto.titulo}
-//             descripcion={proyecto.descripcion}
-//             fechadeinicio={proyecto.fecha_inicio}
-//             url_img_1={proyecto.url_img_1}
-//             avatar={proyecto.organizacion_idorganizacion.url_avatar}
-//           />
-//         ))}
-//       </div>
-//       <button>gh</button>{" "}
-//     </div>
-//   );
-// }
 "use client";
 import { useState } from "react";
 import data from "@/utils/Red";
@@ -54,6 +27,7 @@ export default function Redpages() {
         {currentProjects.map((proyecto) => (
           <Cards
             key={proyecto.idproyecto}
+            idproyecto={proyecto.idproyecto}
             titulo={proyecto.titulo}
             descripcion={proyecto.descripcion}
             fechadeinicio={proyecto.fecha_inicio}
