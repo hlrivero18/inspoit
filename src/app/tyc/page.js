@@ -1,9 +1,11 @@
+
 import style from "./tyc.module.css"
 
 export default function Tyc() {
 
     return (
         <div>
+            
             <div className={style.contenedor_titulo}>
             <h1 className={style.titulo}>Terminos y condiciones</h1>
             </div>
