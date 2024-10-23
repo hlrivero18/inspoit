@@ -1,9 +1,11 @@
 import create from 'zustand';
+import {devtools} from 'zustand/middleware'
 
-const useStore = create((set) => ({
-  count: 0,
-  increaseCount: () => set((state) => ({ count: state.count + 1 })),
-  decreaseCount: () => set((state) => ({ count: state.count - 1 })),
-}));
+const useStore = create(devtools((set) => ({
+  user: null,
+  access: false,
+  setAccess: (value)=> set((state)=>({...state, access: value})),
+  setUser: (value)=> set((state)=>({...state, user: value}))
+}), { name: 'Inspoit' }));
 
 export default useStore;
