@@ -6,8 +6,9 @@ import { Montserrat } from "next/font/google";
 import validatorRegisterOng from '@/utils/validatorRegisterOng';
 import validatorRegisterVol from '@/utils/validatorRegisterVol';
 import axios from 'axios';
-import { POSTUSER } from '@/request/userRequest';
+import { LOGINUSER, POSTUSER } from '@/request/userRequest';
 import useStore from '@/store/useStore';
+import { setJwLocalStorage } from '@/utils/setLogin/loginJwt';
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400"] });
 
 
@@ -43,12 +44,25 @@ export function FormRegister({ typeRegister, setFormOn }) {
         setFormOn(false)
     }
 
+    const handleLogin = async (user) =>{
+        try {
+            const {data} = await axios.post(LOGINUSER, user)
+            const acceso = await data.data.access
+            await setAccess(acceso)
+            await setJwLocalStorage(data.token)
+            await setUser(data.data.id)
+            router.push('/profile/' + data.data.id);
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     const handlePost = async () => {
         // handleError()
         if (Object.keys(error).length === 0) {
             try {
                 const response = await axios.post(POSTUSER, form)
-                console.log(response)
+                handleLogin({email: form.email, password: form.password})
                 setForm({
                     name: "",
                     password: "",
@@ -56,10 +70,10 @@ export function FormRegister({ typeRegister, setFormOn }) {
                     pResponsable: "",
                     repeatPass: ""
                 })
-                const id = response.data.data._id
-                setAccess(true)
-                setUser(id)
-                router.push('/profile/' + id);
+                // const id = response.data.data._id
+                // setAccess(true)
+                // setUser(id)
+                // router.push('/profile/' + id);
 
             }
             catch (error) {

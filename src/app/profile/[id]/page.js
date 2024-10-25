@@ -9,6 +9,8 @@ import useStore from "@/store/useStore";
 import Project from "@/components/ProfileComponents/project/projects";
 import Descripcion from "@/components/ProfileComponents/descripcion/descripcion";
 import EditProfile from "@/components/editProfile/editProfile";
+import profile from "../../../images/profile/profile.png"
+import banner from "../../../images/profile/Portada.png"
 
 export default function Ong() {
 
@@ -35,10 +37,10 @@ export default function Ong() {
         <div className={`${style.container} ${openSans.className}`}>
             <header>
                 <div className={`${style.portada}`}>
-                    <img src={usuario.portadaImage ? usuario.portadaImage : "https://placehold.co/600x400"} alt="foto de portada" />
+                    <img src={usuario.portadaImage ? usuario.portadaImage : banner.src} alt="foto de portada" />
                 </div>
                 <div className={`${style.perfil}`}>
-                    <img src={usuario.profileImage ? usuario.profileImage : "https://placehold.co/240x240"} alt="foto de perfil" />
+                    <img src={usuario.profileImage ? usuario.profileImage : profile.src} alt="foto de perfil" />
                     <h1>{usuario.name} </h1>
                 </div>
             </header>

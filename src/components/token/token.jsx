@@ -4,13 +4,14 @@ import { useEffect } from "react";
 import useStore from "@/store/useStore";
 import { getJwt } from "@/utils/setLogin/loginJwt";
 import axios from "axios";
+import Loader from "../loader/loader";
 
 export default function Token() {
-    const { setAccess, setUser } = useStore();
+    const { setAccess, setUser, loaded, setLoaded } = useStore();
 
     const getID = async (jwtToken) => {
         try {
-            const response = await axios.get(`http://localhost:3001/token/${jwtToken}`);
+            const response = await axios.get(`${request}/token/${jwtToken}`);
             setUser(response.data.id);
             // Aquí puedes manejar la respuesta como necesites
         } catch (error) {
@@ -25,11 +26,14 @@ export default function Token() {
             if (jwtToken) {
                 setAccess(true);
                 getID(jwtToken);
+                setLoaded(false)
             }else{
                 setAccess(false)
+                setLoaded(false)
             }
         }
     }, []);
 
-    return <div></div>;
+    return <div>
+    </div>;
 }
