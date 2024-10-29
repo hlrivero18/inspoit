@@ -9,6 +9,8 @@ import useStore from "@/store/useStore";
 import Project from "@/components/ProfileComponents/project/projects";
 import Descripcion from "@/components/ProfileComponents/descripcion/descripcion";
 import EditProfile from "@/components/editProfile/editProfile";
+import profile from "../../../images/profile/profile.png"
+import banner from "../../../images/profile/Portada.png"
 
 export default function Ong() {
 
@@ -22,6 +24,7 @@ export default function Ong() {
 
     useEffect(() => {
         axios.get("http://localhost:3001/user/" + id).then(({ data }) => {
+            console.log(user)
             setUsuario(data.data)
 
         }).catch(({ response }) => {
@@ -35,11 +38,11 @@ export default function Ong() {
         <div className={`${style.container} ${openSans.className}`}>
             <header>
                 <div className={`${style.portada}`}>
-                    <img src={usuario.portadaImage ? usuario.portadaImage : "https://placehold.co/600x400"} alt="foto de portada" />
+                    <img src={usuario.imagen_portada_url ? usuario.imagen_portada_url : banner.src} alt="foto de portada" />
                 </div>
                 <div className={`${style.perfil}`}>
-                    <img src={usuario.profileImage ? usuario.profileImage : "https://placehold.co/240x240"} alt="foto de perfil" />
-                    <h1>{usuario.name} </h1>
+                    <img src={usuario.imagen_perfil_url ? usuario.imagen_perfil_url : profile.src} alt="foto de perfil" />
+                    <h1>{usuario.nombre} </h1>
                 </div>
             </header>
             <div>
