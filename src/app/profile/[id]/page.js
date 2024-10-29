@@ -24,6 +24,7 @@ export default function Ong() {
 
     useEffect(() => {
         axios.get("http://localhost:3001/user/" + id).then(({ data }) => {
+            console.log(user)
             setUsuario(data.data)
 
         }).catch(({ response }) => {
@@ -37,11 +38,11 @@ export default function Ong() {
         <div className={`${style.container} ${openSans.className}`}>
             <header>
                 <div className={`${style.portada}`}>
-                    <img src={usuario.portadaImage ? usuario.portadaImage : banner.src} alt="foto de portada" />
+                    <img src={usuario.imagen_portada_url ? usuario.imagen_portada_url : banner.src} alt="foto de portada" />
                 </div>
                 <div className={`${style.perfil}`}>
-                    <img src={usuario.profileImage ? usuario.profileImage : profile.src} alt="foto de perfil" />
-                    <h1>{usuario.name} </h1>
+                    <img src={usuario.imagen_perfil_url ? usuario.imagen_perfil_url : profile.src} alt="foto de perfil" />
+                    <h1>{usuario.nombre} </h1>
                 </div>
             </header>
             <div>

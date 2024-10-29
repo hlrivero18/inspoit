@@ -1,11 +1,11 @@
 const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const caracteres = (valor)=>{ return valor.length <= 0 ? true : false }
 
-function validatorRegisterVol({name, email, password, repeatPass}){
+function validatorRegister({nombre, email, password, repeatPass}){
     let voluntario = {}
      
-    if(caracteres(name)){
-     voluntario = {... voluntario, name: "esta campo no puede estar vacio"}
+    if(caracteres(nombre)){
+     voluntario = {... voluntario, nombre: "esta campo no puede estar vacio"}
     }
     if(caracteres(password)){
      voluntario = {... voluntario, password: "debes escribir una contraseña valida"}
@@ -20,4 +20,4 @@ function validatorRegisterVol({name, email, password, repeatPass}){
     return voluntario
 }
 
-export default validatorRegisterVol
+export default validatorRegister
