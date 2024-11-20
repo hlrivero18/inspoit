@@ -1,6 +1,4 @@
-
-
-.contenedorGeneral{
+.contenedorGeneral {
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -18,7 +16,7 @@
   align-items: center;
   background-color: #fff;
   padding: 20px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 4px 10px rgba(188, 166, 166, 0.15);
   border-radius: 8px;
   box-sizing: border-box;
 }
@@ -34,7 +32,7 @@
 
 .barraProgreso {
   height: 100%;
-  background-color: #FF7D27;
+  background-color: #ff7d27;
   transition: width 0.4s ease;
 }
 
@@ -55,7 +53,8 @@
   margin-bottom: 8px;
 }
 
-.entrada, .textarea {
+.entrada,
+.textarea {
   width: 100%;
   padding: 10px;
   border: 1px solid #ddd;
@@ -91,12 +90,12 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-    max-width: 800px;
-    margin-top: 1em
+  max-width: 800px;
+  margin-top: 1em;
 }
 
 .boton {
-  background-color: #1B6872;
+  background-color: #1b6872;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -114,16 +113,6 @@
   background-color: #ccc;
   cursor: not-allowed;
 }
-
-.botonesSelector {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center; 
-  width: 100%;
-  align-items: center;
-}
-
 .botonSelector {
   background-color: #f0f0f0;
   color: #333;
@@ -134,14 +123,14 @@
   text-align: center;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
-  flex: 1 1 calc(33.33% - 20px); 
+  flex: 1 1 calc(33.33% - 20px);
   max-width: 200px;
   min-width: 100px;
+  margin: 5px;
 }
 
-
 .botonSelector:hover {
-  border: 2px solid #1B6872;
+  border: 2px solid #1b6872;
 }
 
 .descripcionBoton {
@@ -152,14 +141,14 @@
   text-align: center;
 }
 
-
-.selector{
-  margin: 1.5em;
+.seleccionado {
+  background-color: #64abb4; /* Cambia el fondo para indicar selección */
+  color: #fff; /* Cambia el color del texto */
+  border: 2px solid #fff; /* Resalta el borde */
 }
-
 
 @media (max-width: 768px) {
   .botonSelector {
-    flex: 1 1 100%; 
+    flex: 1 1 100%;
   }
 }

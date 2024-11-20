@@ -1,0 +1,90 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 20rem;
+}
+
+.p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.button {
+  padding: 0.7rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:first-child {
+  background-color: #e63946;
+  color: #fff;
+  margin-right: 1rem;
+}
+
+.button:first-child:hover {
+  background-color: #d62828;
+}
+
+.button:last-child {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.button:last-child:hover {
+  background-color: #5a6268;
+}
+
+.closeButton {
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  margin-top: 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.closeButton:hover {
+  background-color: #0056b3;
+}

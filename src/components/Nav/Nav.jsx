@@ -15,7 +15,7 @@ const lato = Lato({ subsets: ["latin"], weight: ["700"] });
 
 export default function Navbar() {
   const [menu, setMenu] = useState(false);
-  const { access } = useStore()
+  const { access } = useStore();
 
   const handleMenu = () => {
     setMenu(!menu);
@@ -41,9 +41,9 @@ export default function Navbar() {
             <li>FQAs</li>
           </Link>
         </ul>
-        {access ?
+        {access ? (
           <SearchBar />
-          :
+        ) : (
           <section className={`${style.nav__sectionButton}`}>
             <Link href={"/register"}>
               <button className="bg-botonNaranja">Crear Cuenta</button>
@@ -57,7 +57,7 @@ export default function Navbar() {
               <MdSearch />
             </div>
           </section>
-        }
+        )}
 
         {/* ! version mobile */}
 
@@ -65,7 +65,9 @@ export default function Navbar() {
           <MdOutlineMenuOpen />
         </section>
       </nav>
-      <section className={` ${style.menu__expand} ${menu ? style.show : style.hide}`}>
+      <section
+        className={` ${style.menu__expand} ${menu ? style.show : style.hide}`}
+      >
         <ul>
           <Link href={"/red"} onClick={handleMenu}>
             <li>RED</li>
@@ -75,18 +77,15 @@ export default function Navbar() {
             <li>NOSOTROS</li>
           </Link>
           <li>FQAs</li>
-          <Link href={'/login'} onClick={handleMenu}>
+          <Link href={"/login"} onClick={handleMenu}>
             <li>INGRESAR</li>
           </Link>
-          <Link href={'/register'} onClick={handleMenu}>
+          <Link href={"/register"} onClick={handleMenu}>
             <li>CREAR CUENTA</li>
           </Link>
         </ul>
       </section>
-      <nav className={style.relleno}>
-        {/* espacio en blanco */}
-      </nav>
+      <nav className={style.relleno}>{/* espacio en blanco */}</nav>
     </div>
-
-  )
+  );
 }
