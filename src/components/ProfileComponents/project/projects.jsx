@@ -112,16 +112,6 @@ export default function Project({ id }) {
           </button>
         </div>
       </Modal>
-
-      <div className={`${style.newProject}`}>
-        <h3>Añadir un proyecto</h3>
-        <h4>
-          <Link href={`/form_project/${user}`}>
-            <CiCirclePlus />
-          </Link>
-        </h4>
-      </div>
-
       {loading ? (
         <p>Cargando proyectos...</p>
       ) : projects.length > 0 ? (
@@ -157,9 +147,16 @@ export default function Project({ id }) {
       ) : (
         <>
           <h3>Proyectos</h3>
-          <p>Este usuario aún no tiene proyectos para mostrar</p>
         </>
       )}
+      {user && <div className={`${style.newProject}`}>
+        <h3>Añadir un proyecto</h3>
+        <h4>
+          <Link href={`/form_project/${user}`}>
+            <CiCirclePlus />
+          </Link>
+        </h4>
+      </div>}
     </section>
   );
 }
