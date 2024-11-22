@@ -2,17 +2,17 @@ import style from "./cards.module.css";
 import Link from "next/link";
 export default function Cards({
   idproyecto,
-  titulo,
+  nombre,
   descripcion,
-  fechadeinicio,
-  url_img_1,
+  fecha,
+  imagenes_urls,
   avatar,
 }) {
   return (
     <div className={`${style.cardContainer}`}>
       <div className={style.projectImageContainer}>
         <img
-          src={url_img_1}
+          src={imagenes_urls}
           alt="imagen del proyecto"
           className={style.projectImage}
         />
@@ -23,9 +23,12 @@ export default function Cards({
         className={style.avatar}
       />
       <div className={style.cardInfo}>
-        <h3 className={style.fecha}>{fechadeinicio}</h3>
+        <h3 className={style.fecha}>
+          {" "}
+          {new Date(fecha).toLocaleDateString("es-ES")}
+        </h3>
         <div className={style.cardContent}>
-          <h1 className={style.title}>{titulo}</h1>
+          <h1 className={style.title}>{nombre}</h1>
           <p className={style.description}>
             {descripcion.length > 70
               ? `${descripcion.substring(0, 70)}...`
