@@ -78,3 +78,23 @@
     visibility: visible;
     transform: scaleX(1);
 }
+
+@media (max-width: 768px){
+    .cards{
+        gap: 1rem;
+        display: grid;
+    }
+
+    .card{
+        display: flex;
+        width: 22rem;
+    }
+
+    .card section {
+        margin: 1rem;
+    }
+
+    .header p{
+        margin: 0 20px;
+    }
+}

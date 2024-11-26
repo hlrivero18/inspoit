@@ -1,3 +1,4 @@
+
 export const setJwLocalStorage = (token) => {
     localStorage.setItem('token', token);
 }
@@ -8,7 +9,8 @@ export const getJwt = () => {
 
 export const logout = () => {
     localStorage.removeItem('token');
-
-    window.location.reload(); // Recarga completa de la página
+    
+    // window.location.reload(); 
+    window.location.href = '/'
 
 };

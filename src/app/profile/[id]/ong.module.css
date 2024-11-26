@@ -72,3 +72,13 @@
     -webkit-box-shadow: 6px 7px 24px -2px rgba(0,0,0,0.38);
     -moz-box-shadow: 6px 7px 24px -2px rgba(0,0,0,0.38);
 }
+
+@media (max-width: 768px){
+    .descripcion{
+        display: block;
+        padding: 0 0 20px 0;
+    }
+    .perfil{
+        margin: -120px auto auto auto;
+    }
+}
