@@ -33,7 +33,9 @@ export default function Navbar() {
           <Link href={"/red"}>
             <li>RED</li>
           </Link>
-          <li>CONTACTO</li>
+          <Link href={"/"}>
+            <li>INICIO</li>
+          </Link>
           <Link href={"/about"}>
             <li>NOSOTROS</li>
           </Link>
@@ -72,7 +74,9 @@ export default function Navbar() {
           <Link href={"/red"} onClick={handleMenu}>
             <li>RED</li>
           </Link>
-          <li>CONTACTO</li>
+          <Link href={"/"} onClick={handleMenu}>
+            <li>INICIO</li>
+          </Link>
           <Link href={"/about"} onClick={handleMenu}>
             <li>NOSOTROS</li>
           </Link>

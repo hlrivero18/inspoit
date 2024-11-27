@@ -3,6 +3,7 @@ import logo from "@/images/logoI.png";
 import instagram from "@/images/instagram.png";
 import linkedin from "@/images/linkedin.png";
 import facebook from "@/images/facebook.png";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -35,13 +36,20 @@ export default function Footer() {
           <div className={style.categoriesSection}>
             <h2 className={style.sectionTitle}>CATEGORÍAS</h2>
             <ul className={style.categoriesList}>
-              <li className={style.categoryItem}>Inicio</li>
-              <li className={style.categoryItem}>Red</li>
-              <li className={style.categoryItem}>Inspírate</li>
-              <li className={style.categoryItem}>Política</li>
-              <li className={style.categoryItem}>
-                Acerca de InspoIT Argentina
-              </li>
+              <Link href={"/"}>
+                <li className={style.categoryItem}>Inicio</li>
+              </Link>
+              <Link href={"/red"}>
+                <li className={style.categoryItem}>Red</li>
+              </Link>
+              <Link href={"/tyc"}>
+                <li className={style.categoryItem}>Terminos</li>
+              </Link>
+              <Link href={"/about"}>
+                <li className={style.categoryItem}>
+                  Acerca de InspoIT Argentina
+                </li>
+              </Link>
             </ul>
           </div>
           <div className={style.contactSection}>
