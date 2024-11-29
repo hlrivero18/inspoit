@@ -127,8 +127,8 @@ export default function Filters({ setProjects }) {
               onChange={(e) => setFecha(e.target.value)}
             >
               <option value="">FECHA</option>
-              <option value="desc">Más antiguo</option>
-              <option value="asc">Más reciente</option>
+              <option value="asc">Más antiguo</option>
+              <option value="desc">Más reciente</option>
             </select>
           </div>
 
