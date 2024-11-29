@@ -29,11 +29,20 @@ const profiles = [
     {
         name: "Gustavo Heredia",
         description: "Estudiante avanzado de Análisista de Sistemas, con mucha pasion por el desarrollo web. Soy proactivo y mi habilidad para comunicarme de manera efectiva me permiten desempeñarme en entornos bajo presion resolviendo problemas complejos. Busco oportunidades donde pueda aplicar mis conocimientos, crecer profesionalmente y contribuir con soluciones innovadoras. Estoy listo para aportar mis habilidades y mi energía al equipo",
-        image: "https://media.licdn.com/dms/image/v2/C4D03AQEcGmLrX_VIng/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1649185032893?e=1731542400&v=beta&t=ShUqQeIqO7sw2DOa6_BiSBN1MZLrbFF_PRoEKnWpDSE",
+        image: "https://res.cloudinary.com/pokeapp/image/upload/v1732738922/1649185032893_pkd3un.jpg",
         social: {
             github: "https://github.com/Tavo-94",
             linkedin: "https://www.linkedin.com/in/gustavo-heredia-49b01621b/"
         }
+    },
+    {
+       name: "Valentina Baldomar",
+       description: "",
+       image: "https://res.cloudinary.com/pokeapp/image/upload/v1732879576/d722e394-291d-44a7-b8ce-a266f062ef58_nd5dyl.jpg",
+       social: {
+        github: "https://github.com/valenbaldo",
+        linkedin: "https://www.linkedin.com/in/valentinagarc%C3%ADabaldomar/"
+    }
     },
     {
         name: "Macarena Carril",

@@ -151,4 +151,8 @@
   .botonSelector {
     flex: 1 1 100%;
   }
+
+  .contenedorGeneral{
+    margin: 20px;
+  }
 }

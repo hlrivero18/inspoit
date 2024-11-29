@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 import axios from "axios";
 import styles from "./form_project.module.css";
+import UploadImage from "../imageUpload/imageUpload";
 import Modal from "@/components/modal/modal";
 
 export default function FormProject() {
@@ -69,8 +70,8 @@ export default function FormProject() {
         especializacionSeleccionada
       )
         ? prev.especializacion.filter(
-            (item) => item !== especializacionSeleccionada
-          )
+          (item) => item !== especializacionSeleccionada
+        )
         : [...prev.especializacion, especializacionSeleccionada];
       return {
         ...prev,
@@ -101,9 +102,8 @@ export default function FormProject() {
       <button
         key={index}
         type="button"
-        className={`${styles.botonSelector} ${
-          projectData[campo].includes(item.titulo) ? styles.seleccionado : ""
-        }`}
+        className={`${styles.botonSelector} ${projectData[campo].includes(item.titulo) ? styles.seleccionado : ""
+          }`}
         onClick={() => handleSeleccionado(item.titulo)}
       >
         {item.titulo}
@@ -349,7 +349,8 @@ export default function FormProject() {
             <label htmlFor="imagenes_urls">
               URLs de Imágenes (separadas por comas):
             </label>
-            <input
+            <UploadImage value={projectData.imagenes_urls.join(", ")}/>
+            {/* <input
               type="text"
               id="imagenes_urls"
               name="imagenes_urls"
@@ -361,7 +362,7 @@ export default function FormProject() {
                   imagenes_urls: urls,
                 }));
               }}
-            />
+            /> */}
             <div className={styles.sugerencias}>
               <h3>Tips:</h3>
               <ul>

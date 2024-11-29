@@ -19,7 +19,7 @@ export default function Homepage() {
       <Tipodevoluntariado />
       <hr />
       <br />
-      <SobreNosotros />
+      {/* <SobreNosotros /> */}
     </div>
   );
 }

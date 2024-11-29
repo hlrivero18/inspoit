@@ -7,12 +7,13 @@ import UploadImage from "./imageUpload/imageUpload";
 import axios from "axios";
 import { UPDATEUSER } from "@/request/userRequest";
 import { caracteres } from "@/utils/validatorEdit";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 export default function EditProfile({ typeUser, setFormOn, usuario }) {
 
     const router = useRouter();
-    
+    const pathname = usePathname()
+
     const [edit, setEdit] = useState({
         nombre: usuario.nombre,
         descripcion: usuario.descripcion ? usuario.descripcion : "",
@@ -25,8 +26,8 @@ export default function EditProfile({ typeUser, setFormOn, usuario }) {
     })
 
     const [error, setError] = useState(false)
- 
-    const handleError = (value)=>{
+
+    const handleError = (value) => {
         setError(caracteres(value))
     }
 
@@ -36,7 +37,7 @@ export default function EditProfile({ typeUser, setFormOn, usuario }) {
         let newForm = { ...edit, [name]: value }
         handleError(newForm.nombre)
         setEdit(newForm)
-        
+
     }
 
     const handleImage = (url, type) => {
@@ -56,11 +57,11 @@ export default function EditProfile({ typeUser, setFormOn, usuario }) {
 
     const handleClick = async (e) => {
         e.preventDefault()
-        if(!error){
-           await handlePut()
-           window.location.reload
+        if (!error) {
+            await handlePut()
+            window.location.reload()
         }
-        
+
     }
 
     return (
@@ -72,7 +73,7 @@ export default function EditProfile({ typeUser, setFormOn, usuario }) {
                         <label>Nombre*</label>
                         <input type="text" value={edit.nombre} name="nombre"
                             onChange={handleChange} placeholder={"ingresa tu nombre"} />
-                         <div>
+                        <div>
                             <p>{error && "este campo no puede estar vacio"}</p>
                         </div>
 

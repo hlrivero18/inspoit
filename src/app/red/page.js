@@ -65,6 +65,7 @@ export default function Redpages() {
             descripcion={proyecto.descripcion}
             fecha={proyecto.fecha}
             url_img_1={proyecto.imagenes_urls[0]}
+            avatar = "https://res.cloudinary.com/pokeapp/image/upload/v1732745746/profilePicture_iljdmc.png"
           />
         ))}
       </div>

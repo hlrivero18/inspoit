@@ -100,3 +100,8 @@
     color: var(--colorBotones);
 }
 
+@media (max-width: 768px){
+    .window{
+        width: 80%;
+    }
+}

@@ -10,7 +10,7 @@ export default function Register() {
     const [formOn, setFormOn] = useState(false)
     const [typeRegister, setTypeRegister] = useState('ong')
 
-    const handleForm = (type)=>{
+    const handleForm = (type) => {
         setFormOn(!formOn)
         setTypeRegister(type)
     }
@@ -24,26 +24,31 @@ export default function Register() {
             </div>
 
             <div className={`${style.cards}`}>
-                <div className={`${style.card}`} onClick={()=>handleForm("voluntario")}>
+                <div className={`${style.card}`} onClick={() => handleForm("voluntario")}>
                     <figure className={style.imgrol}>
                         <img src={vol.src} />
                     </figure>
+                    <section>
+                        <h2>Voluntario</h2>
+                        <p>Soy un profesional que quiere ser voluntario</p>
+                    </section>
 
-                    <h2>Voluntario</h2>
-                    <p>Soy un profesional que quiere ser voluntario</p>
                 </div>
-                <div className={`${style.card}`} onClick={()=>handleForm("ong")}>
+                <div className={`${style.card}`} onClick={() => handleForm("ong")}>
                     <figure className={style.imgrol}>
                         <img src={ong.src} />
                     </figure>
-                    <h2>Organizacion</h2>
-                    <p>Mi organizacion esta buscando voluntarios</p>
+                    <section>
+                        <h2>Organizacion</h2>
+                        <p>Mi organizacion esta buscando voluntarios</p>
+                    </section>
+
                 </div>
             </div>
             <Link href={'/login'}>
                 <p className={`${style.login} p-2 border-b border-black font-bold`}>¿ya tienes cuenta? ingresa aqui</p>
             </Link>
-            {formOn && <FormRegister typeRegister={typeRegister} setFormOn={setFormOn}/>}
+            {formOn && <FormRegister typeRegister={typeRegister} setFormOn={setFormOn} />}
 
         </section>
     )
