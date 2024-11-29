@@ -93,14 +93,14 @@ export default function Ong() {
               setFormOn={setFormOn}
             />
             <Project id={id} />
-            <div className={`${style.cardG} p-10`}>
+            {/* <div className={`${style.cardG} p-10`}>
               <h3>{"Reseñas"}</h3>
               <p>
                 {usuario.review
                   ? usuario.review
                   : `este usuario no tiene reseñas para mostrar`}
               </p>
-            </div>
+            </div> */}
           </section>
         </section>
       </div>

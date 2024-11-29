@@ -85,33 +85,74 @@ export default function Project({ id }) {
       <Modal
         show={isConfirmModalOpen}
         onClose={closeConfirmModal}
-        title="Confirmación"
         autoClose={false} // No se cierra automáticamente.
       >
-        <p>¿Estás seguro de que deseas eliminar este proyecto?</p>
-        <div style={{ display: "flex", justifyContent: "center", gap: "1rem" }}>
-          <button
-            onClick={handleDelete}
+        <div
+          style={{ textAlign: "center", fontFamily: "Montserrat, sans-serif" }}
+        >
+          <p
             style={{
-              padding: "0.5rem 1rem",
-              backgroundColor: "red",
-              color: "white",
+              fontSize: "18px",
+              marginBottom: "1.5rem",
+              color: "#1b4956",
             }}
           >
-            Confirmar
-          </button>
-          <button
-            onClick={closeConfirmModal}
-            style={{
-              padding: "0.5rem 1rem",
-              backgroundColor: "gray",
-              color: "white",
-            }}
+            ¿Estás seguro de que deseas eliminar este proyecto?
+          </p>
+          <div
+            style={{ display: "flex", justifyContent: "center", gap: "1rem" }}
           >
-            Cancelar
-          </button>
+            <button
+              onClick={handleDelete}
+              style={{
+                padding: "0.7rem 1.5rem",
+                backgroundColor: "#DE7A38",
+                color: "white",
+                border: "none",
+                borderRadius: "8px",
+                fontSize: "16px",
+                cursor: "pointer",
+                boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+                transition: "transform 0.2s, background-color 0.2s",
+              }}
+              onMouseOver={(e) => (e.target.style.backgroundColor = "#C5672E")}
+              onMouseOut={(e) => (e.target.style.backgroundColor = "#DE7A38")}
+              onFocus={(e) => (e.target.style.backgroundColor = "#C5672E")}
+            >
+              Confirmar
+            </button>
+            <button
+              onClick={closeConfirmModal}
+              style={{
+                padding: "0.7rem 1.5rem",
+                backgroundColor: "#BAC0B9",
+                color: "#1b4956",
+                border: "none",
+                borderRadius: "8px",
+                fontSize: "16px",
+                cursor: "pointer",
+                boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+                transition: "transform 0.2s, background-color 0.2s",
+              }}
+              onMouseOver={(e) => (e.target.style.backgroundColor = "#9EA5A0")}
+              onMouseOut={(e) => (e.target.style.backgroundColor = "#BAC0B9")}
+              onFocus={(e) => (e.target.style.backgroundColor = "#9EA5A0")}
+            >
+              Cancelar
+            </button>
+          </div>
         </div>
       </Modal>
+
+      <div className={`${style.newProject}`}>
+        <h3>Añadir un proyecto</h3>
+        <h4>
+          <Link href={`/form_project/${user}`}>
+            <CiCirclePlus />
+          </Link>
+        </h4>
+      </div>
+
       {loading ? (
         <p>Cargando proyectos...</p>
       ) : projects.length > 0 ? (
@@ -120,8 +161,10 @@ export default function Project({ id }) {
           <ul>
             {projects.map((project) => (
               <li key={project._id} className={style.projectItem}>
-                <h4>{project.nombre}</h4>
-                <p>{project.descripcion}</p>
+                <div className={style.info}>
+                  <h4>{project.nombre}</h4>
+                  <p>{project.descripcion}</p>
+                </div>
                 <div className={style.projectActions}>
                   {/* Ícono de Ver */}
                   <Link href={`/detail/${project._id}`}>
@@ -147,16 +190,9 @@ export default function Project({ id }) {
       ) : (
         <>
           <h3>Proyectos</h3>
+          <p>Este usuario aún no tiene proyectos para mostrar</p>
         </>
       )}
-      {user && <div className={`${style.newProject}`}>
-        <h3>Añadir un proyecto</h3>
-        <h4>
-          <Link href={`/form_project/${user}`}>
-            <CiCirclePlus />
-          </Link>
-        </h4>
-      </div>}
     </section>
   );
 }

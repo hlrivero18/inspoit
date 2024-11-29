@@ -4,6 +4,7 @@ import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Modal from "@/components/modal/modal";
 import style from "./editProject.module.css";
+import { MdArrowBack } from "react-icons/md";
 
 export default function EditProject() {
   const { id } = useParams();
@@ -95,37 +96,46 @@ export default function EditProject() {
       [name]: value,
     }));
   };
+  const handleBack = () => {
+    window.history.back();
+  };
 
   return (
     <div className={style.container}>
-      <h1>Editar Proyecto</h1>
+      <button className={style.backButton} onClick={handleBack}>
+        <MdArrowBack />
+      </button>
+      <h1 className={style.h1}>Editar Proyecto</h1>
       <form onSubmit={handleUpdate} className={style.form}>
-        <label>
+        <label className={style.label}>
           Nombre del proyecto:
           <input
+            className={style.input}
             type="text"
             name="nombre"
             value={projectData.nombre || ""}
             onChange={handleChange}
           />
         </label>
-        <label>
+        <label className={style.label}>
           Descripción:
           <textarea
+            className={style.textarea}
             name="descripcion"
             value={projectData.descripcion || ""}
             onChange={handleChange}
           />
         </label>
-        <label>
+        <label className={style.label}>
           Requisitos:
           <textarea
+            className={style.textarea}
             name="requisitos"
             value={projectData.requisitos || ""}
             onChange={handleChange}
           />
         </label>
-        <label>
+        <label className={style.label}>
           Especialización:
           <div className={style.options}>
             {opcionesEspecializacion.map((opcion) => (
@@ -154,7 +164,7 @@ export default function EditProject() {
           </div>
         </label>
 
-        <label>
+        <label className={style.label}>
           Alcance:
           <div className={style.options}>
             {opcionesAlcance.map((opcion) => (
@@ -179,7 +189,7 @@ export default function EditProject() {
           </div>
         </label>
 
-        <label>
+        <label className={style.label}>
           Tiempo de duración:
           <div className={style.options}>
             {opcionesTiempoDuracion.map((opcion) => (
@@ -204,7 +214,9 @@ export default function EditProject() {
           </div>
         </label>
 
-        <button type="submit">Actualizar Proyecto</button>
+        <button type="submit" className={style.button}>
+          Actualizar Proyecto
+        </button>
       </form>
 
       <Modal

@@ -48,7 +48,12 @@ export default function Footer() {
             <h2 className={style.sectionTitle}>CONTACTANOS</h2>
             <ul className={style.contactList}>
               <li className={style.contactItem}>11-2702-8021</li>
-              <li className={style.contactItem}>InspoIT@gmail.com</li>
+              <li className={style.contactItem}>
+                <a href="mailto:inspoit24@gmail.com" className={style.link}>
+                  inspoit24@gmail.com
+                </a>
+              </li>
+
               <li className={style.iconwhatsapp}>
                 <i className="fab fa-whatsapp"></i>
               </li>

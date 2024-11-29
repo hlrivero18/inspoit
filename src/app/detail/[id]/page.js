@@ -7,6 +7,7 @@ import style from "../detail.module.css";
 import Link from "next/link";
 import { GETIDPROYECT } from "@/request/proyectRequest";
 import { MdArrowBack } from "react-icons/md";
+import Modal from "@/components/modal/modal";
 
 export default function ProjectDetail() {
   const { id } = useParams();
@@ -14,9 +15,12 @@ export default function ProjectDetail() {
   const [loading, setLoading] = useState(true);
 
   // Estados para los campos del formulario
-  const [nombre, setNombre] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [mensaje, setMensaje] = useState("");
+  const [message, setMessage] = useState("");
+
+  // Estado para controlar la visibilidad del modal
+  const [showModal, setShowModal] = useState(false);
 
   // Hacer la solicitud al backend para obtener el proyecto por ID
   useEffect(() => {
@@ -37,14 +41,21 @@ export default function ProjectDetail() {
     e.preventDefault();
     // Aquí puedes hacer una solicitud al backend para enviar el formulario
     try {
-      const response = await axios.post(`/api/contact/${id}`, {
-        nombre,
-        email,
-        mensaje,
-      });
+      const response = await axios.post(
+        `http://localhost:3001/email/apply/${id}`,
+        {
+          name,
+          email,
+          message,
+        }
+      );
       console.log("Formulario enviado exitosamente", response.data);
+      setShowModal(true);
+      setName("");
+      setEmail("");
+      setMessage("");
     } catch (error) {
-      console.error("Error al enviar el formulario:", error);
+      console.error("Error al enviar el formulario:", error.response.data);
     }
   };
 
@@ -56,15 +67,16 @@ export default function ProjectDetail() {
     return <div>Proyecto no encontrado</div>;
   }
 
+  const handleBack = () => {
+    window.history.back(); // Regresa a la página anterior usando el historial del navegador.
+  };
+
   return (
     <div className={style.container}>
-      <Link href={"/red"}>
-        <button className={style.backButton}>
-          <i className="fas fa-arrow-left">
-            <MdArrowBack />
-          </i>
-        </button>
-      </Link>
+      <button className={style.backButton} onClick={handleBack}>
+        <MdArrowBack />
+      </button>
+
       <div className={style.containerInfo}>
         <h1 className={style.title}>{proyecto.nombre}</h1>
         <h2 className={style.organization}>
@@ -120,8 +132,8 @@ export default function ProjectDetail() {
               Nombre:
               <input
                 type="text"
-                value={nombre}
-                onChange={(e) => setNombre(e.target.value)}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 required
               />
             </label>
@@ -137,8 +149,8 @@ export default function ProjectDetail() {
             <label>
               Mensaje:
               <textarea
-                value={mensaje}
-                onChange={(e) => setMensaje(e.target.value)}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 required
               />
             </label>
@@ -146,6 +158,14 @@ export default function ProjectDetail() {
               Enviar mensaje
             </button>
           </form>
+          <Modal
+            show={showModal}
+            onClose={() => setShowModal(false)}
+            title="Formulario enviado exitosamente"
+            autoClose={true}
+          >
+            <p>Espera la respuesta del creador.</p>
+          </Modal>
         </div>
       </div>
     </div>
