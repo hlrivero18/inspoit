@@ -1,28 +1,80 @@
-.cardG{
-    margin: 15px;
-    background-color: white;
-    width: auto;
-    border-radius: 20px;
-    box-shadow: 6px 7px 24px -2px rgba(0,0,0,0.38);
-    -webkit-box-shadow: 6px 7px 24px -2px rgba(0,0,0,0.38);
-    -moz-box-shadow: 6px 7px 24px -2px rgba(0,0,0,0.38);
+.cardG {
+  margin: 15px;
+  background-color: white;
+  width: auto;
+  border-radius: 20px;
+  box-shadow: 6px 7px 24px -2px rgba(0, 0, 0, 0.38);
+  -webkit-box-shadow: 6px 7px 24px -2px rgba(0, 0, 0, 0.38);
+  -moz-box-shadow: 6px 7px 24px -2px rgba(0, 0, 0, 0.38);
 }
 
-.cardG h3{
-    font-size: 1rem;
-    font-weight: bolder;
+.cardG h3 {
+  font-size: 1rem;
+  font-weight: bolder;
 }
 
-.newProject{
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra horizontalmente */
-    justify-content: center; /* Centra verticalmente */
-    height: 100%; /* Asegura que el contenedor ocupe todo el espacio disponible */
-    text-align: center
+.newProject {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
+  height: 100%; /* Asegura que el contenedor ocupe todo el espacio disponible */
+  text-align: center;
 }
 
-.newProject h4{
-    font-size: 50px;
-    cursor: pointer;
+.newProject h4 {
+  font-size: 50px;
+  cursor: pointer;
+}
+
+.projectItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.projectItem:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.projectInfo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+
+  color: #333;
+}
+
+.projectInfo p {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+
+  color: #666;
+}
+
+.projectActions {
+  display: flex;
+  align-items: center;
+
+  gap: 1rem;
+  margin-left: 50px;
+}
+
+.icon {
+  font-size: 1.4rem;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.icon:hover {
+  color: #e63946;
+  transform: scale(1.1);
 }

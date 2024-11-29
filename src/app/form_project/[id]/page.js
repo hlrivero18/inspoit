@@ -4,10 +4,12 @@ import { useRouter, useParams } from "next/navigation";
 import axios from "axios";
 import styles from "./form_project.module.css";
 import UploadImage from "../imageUpload/imageUpload";
+import Modal from "@/components/modal/modal";
 
 export default function FormProject() {
   const { id } = useParams(); // ID del usuario desde la URL
-  const router = useRouter();
+  const [modalVisible, setModalVisible] = useState(false);
+  const [proyectoId, setProyectoId] = useState(null);
 
   const [projectData, setProjectData] = useState({
     usuario: id,
@@ -122,12 +124,14 @@ export default function FormProject() {
         projectData
       );
       console.log("Respuesta del servidor:", response.data);
-      // Redirige al perfil del usuario u otra página tras éxito
-      // router.push(`/user/${id}`);
-      router.push(`/detail/${id}`);
+
+      const idProyecto = response.data._id; // Captura el ID del proyecto
+      setProyectoId(idProyecto); // Guarda el ID para usarlo luego
+
+      // Muestra el modal
+      setModalVisible(true);
     } catch (error) {
       console.error("Error al crear el proyecto:", error);
-      // detalles completos del error
       if (error.response) {
         console.error("Detalles del error:", error.response.data);
       } else {
@@ -135,6 +139,38 @@ export default function FormProject() {
       }
     }
   };
+
+  const handleCloseModal = () => {
+    setModalVisible(false);
+
+    // Redirige al detalle del proyecto después de cerrar el modal
+    if (proyectoId) {
+      window.location.href = `/detail/${proyectoId}`;
+    }
+  };
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   console.log("Resultado final de la publicación:", projectData);
+
+  //   try {
+  //     const response = await axios.post(
+  //       "http://localhost:3001/proyect/",
+  //       projectData
+  //     );
+  //     console.log("Respuesta del servidor:", response.data);
+  //     // Redirige al perfil del usuario u otra página tras éxito
+  //     // router.push(`/user/${id}`);
+  //     router.push(`/detail/${id}`);
+  //   } catch (error) {
+  //     console.error("Error al crear el proyecto:", error);
+  //     // detalles completos del error
+  //     if (error.response) {
+  //       console.error("Detalles del error:", error.response.data);
+  //     } else {
+  //       console.error("Error sin respuesta del servidor:", error.message);
+  //     }
+  //   }
+  // };
 
   //Movimiento del form
 
@@ -402,6 +438,14 @@ export default function FormProject() {
           </button>
         </div>
       </form>
+      <Modal
+        show={modalVisible}
+        onClose={handleCloseModal}
+        title="¡Proyecto creado con éxito!"
+        autoClose={true} // Si deseas que se cierre automáticamente
+      >
+        <p>Tu proyecto ha sido creado correctamente.</p>
+      </Modal>
     </div>
   );
 }

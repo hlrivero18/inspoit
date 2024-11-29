@@ -1,60 +1,161 @@
 .container {
-  margin: 20px auto;
-  max-width: 600px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-}
-
-.form label {
-  display: block;
-  margin-bottom: 10px;
-}
-
-.form input,
-.form textarea {
   width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  margin-bottom: 15px;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #eaf7f7;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #ff7d27;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Estilos para el formulario */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #555;
+  font-family: "Roboto", sans-serif;
+}
+
+.input,
+.textarea {
+  margin-top: 1px;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: "Roboto", sans-serif;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #1ca19f;
+  box-shadow: 0 0 8px rgba(28, 161, 159, 0.4);
+  outline: none;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Efecto al pasar el cursor */
+.input:hover,
+.textarea:hover {
+  border-color: #1ca19f;
+}
+
+/* Estilos para las opciones */
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
 }
 
 .button {
-  padding: 10px 15px;
-  background-color: #0070f3;
-  color: #fff;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
+  background-color: #1ca19f;
+  color: #fff;
   cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+  background-color: #159d97;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.activeButton {
+  margin-top: 7px;
+  background-color: #1ca19f;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid #148f89;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.activeButton:hover {
+  background-color: #148f89;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.inactiveButton {
+  margin-top: 7px;
+  background-color: #f9f9f9;
+  color: #333333;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.inactiveButton:hover {
+  background-color: #eeeeee;
+  border-color: #bbbbbb;
+}
+
+.button[type="submit"] {
+  background-color: wheat;
+  color: #ff7d27;
+  padding: 0.5rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  align-self: center;
+  transition: all 0.3s ease;
+}
+
+.button[type="submit"]:hover {
+  background-color: #ff7d27;
+  color: wheat;
 }
 
 .loader,
 .error,
 .noData {
   text-align: center;
-  margin-top: 20px;
+  font-size: 1.2rem;
+  font-family: "Roboto", sans-serif;
 }
 
-.options {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+.loader {
+  color: #1ca19f;
 }
 
-.button {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
+.error {
+  color: #e63946;
 }
 
-.activeButton {
-  background-color: #007bff;
-  color: white;
-}
-
-.inactiveButton {
-  background-color: #f0f0f0;
-  color: #333;
+.noData {
+  color: #6c757d;
 }
