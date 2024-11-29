@@ -36,6 +36,15 @@ const profiles = [
         }
     },
     {
+       name: "Valentina Baldomar",
+       description: "",
+       image: "https://res.cloudinary.com/pokeapp/image/upload/v1732879576/d722e394-291d-44a7-b8ce-a266f062ef58_nd5dyl.jpg",
+       social: {
+        github: "https://github.com/valenbaldo",
+        linkedin: "https://www.linkedin.com/in/valentinagarc%C3%ADabaldomar/"
+    }
+    },
+    {
         name: "Macarena Carril",
         description: "Soy creativa con capacidad analítica, capaz de adaptarme a diferentes entornos y nuevos desafíos. Apasionada y curiosa por las nuevas culturas y tecnologías, me gusta crear y diseñar con la ayuda de herramientas tecnológicas. Cuento con experiencia en atención al cliente y estoy buscando una oportunidad laboral en el ámbito de IT.",
         image: "https://res.cloudinary.com/pokeapp/image/upload/v1725802193/macarena_rjewlb.png",
