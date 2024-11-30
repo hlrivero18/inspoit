@@ -147,6 +147,11 @@
   border: 2px solid #fff; /* Resalta el borde */
 }
 
+/* .resumen{
+  width: 50%;
+} */
+
+
 @media (max-width: 768px) {
   .botonSelector {
     flex: 1 1 100%;

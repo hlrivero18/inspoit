@@ -347,9 +347,14 @@ export default function FormProject() {
             <h2 className={styles.titulo}>Publicación de proyecto</h2>
 
             <label htmlFor="imagenes_urls">
-              URLs de Imágenes (separadas por comas):
+              Selecciona una o dos imagenes
             </label>
-            <UploadImage value={projectData.imagenes_urls.join(", ")}/>
+            <div className="flex p-4">
+              {projectData.imagenes_urls[0] && <img className="w-24 h-16" src={projectData.imagenes_urls[0]} />}
+              {projectData.imagenes_urls[1] && <img className="w-24 h-16" src={projectData.imagenes_urls[1]} />}
+            </div>
+
+            <UploadImage set={setProjectData} state={projectData} />
             {/* <input
               type="text"
               id="imagenes_urls"
@@ -398,10 +403,10 @@ export default function FormProject() {
             <p>
               <strong>Tiempo de Duración:</strong> {projectData.tiempo_duracion}
             </p>
-            <p>
+            {/* <p>
               <strong>URLs de Imágenes:</strong>{" "}
               {projectData.imagenes_urls.join(", ")}
-            </p>
+            </p> */}
             <div className={styles.sugerencias}>
               <h3>¿Todo está correcto?</h3>
               <p>

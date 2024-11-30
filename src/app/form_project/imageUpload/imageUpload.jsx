@@ -3,10 +3,14 @@ import axios from "axios";
 import style from "./imageUpload.module.css"
 
 export default function UploadImage(props) {
-    const { handleImage, type, value } = props
+    const { set, state } = props
     const [imageFile, setImageFile] = useState(null)
     const [imagePreview, setImagePreview] = useState('')
-    
+    console.log(state)
+
+    const handleImage = (url)=>{
+        set({...state, imagenes_urls: [...state.imagenes_urls, url]})
+    }
 
     const handleChange = (e) => {
         const file = e.target.files[0];
@@ -26,7 +30,7 @@ export default function UploadImage(props) {
             .then((res) => {
                 setImagePreview(res.data.secure_url);
                 if (handleImage) {
-                    handleImage(res.data.secure_url, type);
+                    handleImage(res.data.secure_url);
                 }
             })
             .catch((err) => {
@@ -40,7 +44,7 @@ export default function UploadImage(props) {
     return (
         <div>
             <input className={style.inputFile} type="file" id="imagenes_urls"
-              name="imagenes_urls" value={value} onChange={handleChange}/>
+              name="imagenes_urls" onChange={handleChange}/>
         </div>
 
     )

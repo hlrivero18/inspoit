@@ -5,6 +5,7 @@ import useStore from "@/store/useStore";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Modal from "@/components/modal/modal";
+import { GETPROYECTFORUSER } from "@/request/userRequest";
 
 export default function Project({ id }) {
   const { user } = useStore();
@@ -19,10 +20,11 @@ export default function Project({ id }) {
     async function fetchProjects() {
       try {
         const response = await fetch(
-          `http://localhost:3001/proyect/user/${id}`
+          GETPROYECTFORUSER + id
         );
         const data = await response.json();
         setProjects(data);
+        console.log(projects)
       } catch (error) {
         console.error("Error al cargar los proyectos:", error);
       } finally {
@@ -144,15 +146,6 @@ export default function Project({ id }) {
         </div>
       </Modal>
 
-      <div className={`${style.newProject}`}>
-        <h3>Añadir un proyecto</h3>
-        <h4>
-          <Link href={`/form_project/${user}`}>
-            <CiCirclePlus />
-          </Link>
-        </h4>
-      </div>
-
       {loading ? (
         <p>Cargando proyectos...</p>
       ) : projects.length > 0 ? (
@@ -193,6 +186,14 @@ export default function Project({ id }) {
           <p>Este usuario aún no tiene proyectos para mostrar</p>
         </>
       )}
+      {user == id &&  <div className={`${style.newProject}`}>
+        <h3>Añadir un proyecto</h3>
+        <h4>
+          <Link href={`/form_project/${user}`}>
+            <CiCirclePlus />
+          </Link>
+        </h4>
+      </div> }
     </section>
   );
 }

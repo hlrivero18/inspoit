@@ -5,14 +5,14 @@ export default function Cards({
   nombre,
   descripcion,
   fecha,
-  imagenes_urls,
+  url_img_1,
   avatar,
 }) {
   return (
     <div className={`${style.cardContainer}`}>
       <div className={style.projectImageContainer}>
         <img
-          src={imagenes_urls}
+          src={url_img_1}
           alt="imagen del proyecto"
           className={style.projectImage}
         />
