@@ -1,11 +1,11 @@
 const profiles = [
     {
-        name: "Giuliana Cantero",
-        description: "Soy creativa con capacidad analítica, capaz de adaptarme a diferentes entornos y nuevos desafíos. Apasionada y curiosa por las nuevas culturas y tecnologías, me gusta crear y diseñar con la ayuda de herramientas tecnológicas. Cuento con experiencia en atención al cliente y estoy buscando una oportunidad laboral en el ámbito de IT.",
-        image: "https://res.cloudinary.com/pokeapp/image/upload/v1725802193/giuliana_s356rw.png",
+        name: "Agustina Solabarrieta",
+        description: "Soy una desarrolladora web Full Stack con gran motivación para enfrentar desafíos y contribuir al avance tecnológico. Me considero una persona organizada y con facilidad para adaptarme a diferentes entornos. He trabajado en proyectos tanto individuales como grupales, siempre buscando aplicar buenas prácticas de desarrollo y prestando atención a cada detalle para obtener los mejores resultados. Actualmente, estoy enfocada en ampliar mis conocimientos en diseño UX/UI, con el objetivo de crear interfaces más intuitivas y centradas en las necesidades del usuario.",
+        image: "https://res.cloudinary.com/pokeapp/image/upload/v1725802193/agustina_tvydwt.png",
         social: {
-            github: "https://github.com/giulianacntrs",
-            linkedin: "https://www.linkedin.com/in/giulianacanteros/"
+            github: "https://github.com/AgustinSolaberrieta",
+            linkedin: "https://www.linkedin.com/in/agustina-solaberrieta/"
         }
     },
     {
@@ -15,15 +15,6 @@ const profiles = [
         social: {
             github: "https://github.com/hlrivero18",
             linkedin: "https://www.linkedin.com/in/hector-luis-rivero-311578260/"
-        }
-    },
-    {
-        name: "Agustina Solabarrieta",
-        description: "Soy creativa con capacidad analítica, capaz de adaptarme a diferentes entornos y nuevos desafíos. Apasionada y curiosa por las nuevas culturas y tecnologías, me gusta crear y diseñar con la ayuda de herramientas tecnológicas. Cuento con experiencia en atención al cliente y estoy buscando una oportunidad laboral en el ámbito de IT.",
-        image: "https://res.cloudinary.com/pokeapp/image/upload/v1725802193/agustina_tvydwt.png",
-        social: {
-            github: "https://github.com/AgustinSolaberrieta",
-            linkedin: "https://www.linkedin.com/in/agustina-solaberrieta/"
         }
     },
     {
@@ -37,12 +28,21 @@ const profiles = [
     },
     {
        name: "Valentina Baldomar",
-       description: "",
+       description: " Veo la tecnología como una forma de combinar creatividad y aprendizaje continuo. Me encantaría poder aplicar la tecnología en una industria que conozco y me apasiona, como la belleza, donde puedo unir mi experiencia con mi interés en generar un impacto positivo.",
        image: "https://res.cloudinary.com/pokeapp/image/upload/v1732879576/d722e394-291d-44a7-b8ce-a266f062ef58_nd5dyl.jpg",
        social: {
         github: "https://github.com/valenbaldo",
         linkedin: "https://www.linkedin.com/in/valentinagarc%C3%ADabaldomar/"
     }
+    },
+    {
+        name: "Giuliana Cantero",
+        description: "Soy creativa con capacidad analítica, capaz de adaptarme a diferentes entornos y nuevos desafíos. Apasionada y curiosa por las nuevas culturas y tecnologías, me gusta crear y diseñar con la ayuda de herramientas tecnológicas. Cuento con experiencia en atención al cliente y estoy buscando una oportunidad laboral en el ámbito de IT.",
+        image: "https://res.cloudinary.com/pokeapp/image/upload/v1725802193/giuliana_s356rw.png",
+        social: {
+            github: "https://github.com/giulianacntrs",
+            linkedin: "https://www.linkedin.com/in/giulianacanteros/"
+        }
     },
     {
         name: "Macarena Carril",

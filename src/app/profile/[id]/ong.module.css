@@ -1,6 +1,7 @@
 .container{
     background-color: var(--colorClaro);
     color: var(--colorFuente);
+    padding-bottom: 2rem;
 }
 
 .container h3{
@@ -61,6 +62,13 @@
     height: fit-content;
     display: grid;
     gap: 10px;
+}
+
+.card button{
+    background-color: var(--colorClaro);
+    padding: 10px;
+    border-radius: 20px;
+    border: solid 2px var(--colorFuente);
 }
 
 .cardG{

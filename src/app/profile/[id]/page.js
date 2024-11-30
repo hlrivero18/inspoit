@@ -67,7 +67,7 @@ export default function Ong() {
             )}
             {usuario.sede && (
               <div>
-                <h3>Sede</h3>
+                <h3>{usuario.tipo_usuario == "ong" ? "Sede" : "Ubicación"}</h3>
                 <p>{usuario.sede}</p>
               </div>
             )}
@@ -92,22 +92,24 @@ export default function Ong() {
               descripcion={usuario.descripcion}
               setFormOn={setFormOn}
             />
-            <Project id={id} />
-            {/* <div className={`${style.cardG} p-10`}>
+
+            {usuario.tipo_usuario === "ong" && <Project id={id} />}
+            
+            <div className={`${style.cardG} p-10`}>
               <h3>{"Reseñas"}</h3>
               <p>
                 {usuario.review
                   ? usuario.review
                   : `este usuario no tiene reseñas para mostrar`}
               </p>
-            </div> */}
+            </div>
           </section>
         </section>
       </div>
       {formOn && (
         <EditProfile
           setFormOn={setFormOn}
-          typeUser={usuario.typeUser}
+          typeUser={usuario.tipo_usuario}
           usuario={usuario}
         />
       )}

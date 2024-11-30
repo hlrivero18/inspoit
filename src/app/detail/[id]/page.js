@@ -8,12 +8,13 @@ import Link from "next/link";
 import { GETIDPROYECT } from "@/request/proyectRequest";
 import { MdArrowBack } from "react-icons/md";
 import Modal from "@/components/modal/modal";
+import useStore from "@/store/useStore";
 
 export default function ProjectDetail() {
   const { id } = useParams();
   const [proyecto, setProyecto] = useState(null);
   const [loading, setLoading] = useState(true);
-
+  const { user } = useStore();
   // Estados para los campos del formulario
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -122,51 +123,57 @@ export default function ProjectDetail() {
           </p>
         </div>
 
-        <button className={style.applyButton}>Postularse</button>
+        {/* <button className={style.applyButton}>Postularse</button> */}
+        { user ?
+          <div className={style.contactFormContainer}>
+            <h3>Contáctate con el propietario del proyecto</h3>
+            <form onSubmit={handleFormSubmit} className={style.contactForm}>
+              <label>
+                Nombre:
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                />
+              </label>
+              <label>
+                Email:
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </label>
+              <label>
+                Mensaje:
+                <textarea
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  required
+                />
+              </label>
+              <button type="submit" className={style.sendButton}>
+                Enviar mensaje
+              </button>
+            </form>
+            <Modal
+              show={showModal}
+              onClose={() => setShowModal(false)}
+              title="Formulario enviado exitosamente"
+              autoClose={true}
+            >
+              <p>Espera la respuesta del creador.</p>
+            </Modal>
+          </div>
+          :
+          <div className={style.noUser}>
+            <h2>Querés ponerte en contacto con esta organización?</h2>
+            <p> Se parte de la innovación tecnologica y <Link href="/register" className="text-orange-500 underline hover:text-orange-700">Registrate</Link> ó si sos usuario <Link href="/login" className="text-orange-500 underline hover:text-orange-700">Inicia sesión</Link></p>
+          </div>
+        }
 
-        {/* Formulario para contactar */}
-        <div className={style.contactFormContainer}>
-          <h3>Contáctate con el propietario del proyecto</h3>
-          <form onSubmit={handleFormSubmit} className={style.contactForm}>
-            <label>
-              Nombre:
-              <input
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
-            </label>
-            <label>
-              Email:
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </label>
-            <label>
-              Mensaje:
-              <textarea
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                required
-              />
-            </label>
-            <button type="submit" className={style.sendButton}>
-              Enviar mensaje
-            </button>
-          </form>
-          <Modal
-            show={showModal}
-            onClose={() => setShowModal(false)}
-            title="Formulario enviado exitosamente"
-            autoClose={true}
-          >
-            <p>Espera la respuesta del creador.</p>
-          </Modal>
-        </div>
       </div>
     </div>
   );
