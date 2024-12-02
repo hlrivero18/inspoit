@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Modal from "@/components/modal/modal";
 import style from "./editProject.module.css";
 import { MdArrowBack } from "react-icons/md";
+import { request } from "@/request/request";
 
 export default function EditProject() {
   const { id } = useParams();
@@ -19,7 +20,7 @@ export default function EditProject() {
       const fetchProject = async () => {
         try {
           setIsLoading(true);
-          const response = await fetch(`http://localhost:3001/proyect/${id}`);
+          const response = await fetch(`${request}proyect/${id}`);
           if (!response.ok) {
             throw new Error("Error al obtener los datos del proyecto");
           }

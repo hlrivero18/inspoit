@@ -5,6 +5,7 @@ import axios from "axios";
 import styles from "./form_project.module.css";
 import UploadImage from "../imageUpload/imageUpload";
 import Modal from "@/components/modal/modal";
+import { request } from "@/request/request";
 
 export default function FormProject() {
   const { id } = useParams(); // ID del usuario desde la URL
@@ -120,7 +121,7 @@ export default function FormProject() {
 
     try {
       const response = await axios.post(
-        "http://localhost:3001/proyect/",
+        `${request}proyect/`,
         projectData
       );
       console.log("Respuesta del servidor:", response.data);

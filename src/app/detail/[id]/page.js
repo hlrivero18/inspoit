@@ -9,6 +9,7 @@ import { GETIDPROYECT } from "@/request/proyectRequest";
 import { MdArrowBack } from "react-icons/md";
 import Modal from "@/components/modal/modal";
 import useStore from "@/store/useStore";
+import { request } from "@/request/request";
 
 export default function ProjectDetail() {
   const { id } = useParams();
@@ -43,7 +44,7 @@ export default function ProjectDetail() {
     // Aquí puedes hacer una solicitud al backend para enviar el formulario
     try {
       const response = await axios.post(
-        `http://localhost:3001/email/apply/${id}`,
+        `${request}email/apply/${id}`,
         {
           name,
           email,
