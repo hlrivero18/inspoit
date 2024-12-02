@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Modal from "@/components/modal/modal";
 import { GETPROYECTFORUSER } from "@/request/userRequest";
+import { request } from "@/request/request";
 
 export default function Project({ id }) {
   const { user } = useStore();
@@ -39,7 +40,7 @@ export default function Project({ id }) {
 
   const handleDelete = async () => {
     try {
-      await fetch(`http://localhost:3001/proyect/${projectToDelete}`, {
+      await fetch(`${request}proyect/${projectToDelete}`, {
         method: "DELETE",
       });
       setProjects((prevProjects) =>

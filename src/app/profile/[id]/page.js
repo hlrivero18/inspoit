@@ -11,6 +11,7 @@ import Descripcion from "@/components/ProfileComponents/descripcion/descripcion"
 import EditProfile from "@/components/editProfile/editProfile";
 import profile from "../../../images/profile/profile.png";
 import banner from "../../../images/profile/Portada.png";
+import { GETUSERID } from "@/request/userRequest";
 
 export default function Ong() {
   const { user } = useStore();
@@ -22,7 +23,7 @@ export default function Ong() {
   useEffect(() => {
     if (id) {
       axios
-        .get(`http://localhost:3001/user/${id}`)
+        .get(GETUSERID + id)
         .then(({ data }) => setUsuario(data.data))
         .catch(({ response }) => setError(response?.data?.error));
     }
